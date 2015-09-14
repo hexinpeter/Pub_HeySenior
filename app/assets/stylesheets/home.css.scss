@@ -9,3 +9,18 @@ $cus-pink: #fa5072;
   background-color: $main-blue;
   color: white;
 }
+
+.cus-btn {
+  background-color: $main-blue !important;
+  color: white !important;
+  border-color: white !important;
+  border-width: 2px !important;
+  font-size: 1.5em !important;
+}
+
+
+@media (max-width: 768px) {
+  .cus-btn {
+    font-size: 1.2em !important;
+  }
+}
