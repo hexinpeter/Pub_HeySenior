@@ -1,0 +1,36 @@
+@import "home";
+
+body {
+  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+#cus-navbar {
+  padding-top: 3px;
+  padding-bottom: 6px;
+  border-bottom: solid 1px #ccc;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  .cus-nav-nav {
+    a {
+      color: #575e6f !important;
+      float: right!important;
+    }
+
+  }
+
+  .navbar-header {
+    float: left;
+  }
+
+  .cus-btn {
+    background-color: $main-blue;
+    color: white;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cus-nav-nav {
+    margin: 7.5px -15px 0px !important;
+  }
+}
