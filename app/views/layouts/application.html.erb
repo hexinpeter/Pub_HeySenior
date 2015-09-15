@@ -12,31 +12,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="body-wrapper">
+    <nav class="navbar" id="cus-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <%= image_tag "logo-small", width: "134px" %>
+          </a>
+        </div>
 
-<nav class="navbar" id="cus-navbar">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <%= image_tag "logo-small", width: "134px" %>
-      </a>
-    </div>
+        <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
+          <button class="btn cus-nav-btn">Ask for Help</button>
+        </div>
 
-      <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
-        <button class="btn cus-nav-btn">Ask for Help</button>
+        <ul class="nav navbar-nav navbar-right cus-nav-nav">
+          <li><a href="#">Login</a></li>
+          <li><a href="#" class="visible-lg-inline visible-md-inline">Sign up</a></li>
+        </ul>
       </div>
-      <ul class="nav navbar-nav navbar-right cus-nav-nav">
-        <li><a href="#">Login</a></li>
-        <li><a href="#" class="visible-lg-inline visible-md-inline">Sign up</a></li>
-      </ul>
+    </nav>
 
-    </div><!-- /.navbar-collapse -->
-  <!-- </div>/.container-fluid -->
-</nav>
-
-<%= yield %>
+    <%= yield %>
+    <div class="push"></div>
+  </div>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <footer id="footer">
+    <div class="container">
+      Copyright (c) 2015
+    </div>
+  </footer>
 </body>
 </html>

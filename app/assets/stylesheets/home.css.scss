@@ -1,26 +1,77 @@
 $cus-black: #26282e;
 $main-blue: #00a3e0;
+$hover-blue: #0088C0;
 $light-blue: #66c8ec;
 $dark-blue: #363e4f;
 $cus-pink: #fa5072;
-
+$hover-pink: #FF1F4C;
 
 #headline {
   background-color: $main-blue;
   color: white;
+  text-align: center;
+
+  #headline-buttons {
+    margin-top: 30px;
+  }
+
+  .cus-btn {
+    color: white !important;
+    border-color: white !important;
+    border-width: 2px !important;
+    font-size: 1.5em !important;
+    &#btn-pink {
+      background-color: $cus-pink !important;
+      &:hover {
+        background-color: $hover-pink !important;
+      }
+    }
+    &#btn-blue {
+      background-color: $main-blue !important;
+      &:hover {
+        background-color: $hover-blue !important;
+      }
+    }
+  }
+
+  .cus-btn:hover {
+
+  }
+
 }
 
-.cus-btn {
-  background-color: $main-blue !important;
-  color: white !important;
-  border-color: white !important;
-  border-width: 2px !important;
-  font-size: 1.5em !important;
-}
+#workflow {
+  #title {
+    div {
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+      text-align: center;
+      border-bottom: 2px solid gray;
+      padding-bottom: 10px;
+    }
+  }
 
+  .workflow-step {
+    width: 80%;
+    margin: 30px auto 50px auto;
+
+    .workflow-title:after {
+      position: relative;
+      display: block;
+      padding-top: 10px;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      border-bottom: 3px solid #333;
+      content: '';
+    }
+
+  }
+}
 
 @media (max-width: 768px) {
-  .cus-btn {
+  #headline .cus-btn {
     font-size: 1.2em !important;
   }
 }

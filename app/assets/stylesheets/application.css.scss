@@ -4,6 +4,18 @@
 body {
   font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
 }
+html, body {
+  height: 100%;
+}
+#body-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -3em;
+}
+.footer, .push {
+  height: 3em;
+}
 
 #cus-navbar {
   padding-top: 3px;
@@ -27,8 +39,19 @@ body {
     background-color: $main-blue;
     color: white;
   }
+
+  .cus-nav-btn:hover {
+    background-color: $hover-blue !important;
+  }
+
 }
 
+footer {
+  background-color: #0079AB;
+  color: white;
+  padding: 1em 0px;
+  /*position: fixed;*/
+}
 
 @media (max-width: 768px) {
   .cus-nav-nav {
