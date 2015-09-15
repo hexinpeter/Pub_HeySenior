@@ -1,10 +1,11 @@
+ruby "2.3.0"
 source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgres as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,5 +47,9 @@ group :development, :test do
 
   gem 'pry-rails'
   gem 'guard-livereload', '~> 2.4', require: false
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
