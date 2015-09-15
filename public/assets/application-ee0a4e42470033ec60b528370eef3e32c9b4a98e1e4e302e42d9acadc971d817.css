@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'Myriad Set Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url("myriad-set-pro_text.woff") format("woff");
+  /* Copyright (c) 1992 Adobe Systems Incorporated. All Rights Reserved. Myriad is a trademark of Adobe Systems Incorporated. */
+}
+@font-face {
+  font-family: 'Myriad Set Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url("myriad-set-pro_thin.woff") format("woff");
+  /* Copyright (c) 1992 Adobe Systems Incorporated. All Rights Reserved. Myriad is a trademark of Adobe Systems Incorporated. */
+}
+@font-face {
+  font-family: 'Myriad Set Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: url("myriad-set-pro_semibold.woff") format("woff");
+  /* Copyright (c) 1992 Adobe Systems Incorporated. All Rights Reserved. Myriad is a trademark of Adobe Systems Incorporated. */
+}
+/* line 10, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#index-page h1, #index-page h2, #index-page h3, #index-page h4, #index-page h5, #index-page p {
+  font-weight: 400 !important;
+}
+
+/* line 15, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline {
+  background-color: #00a3e0;
+  color: white;
+  text-align: center;
+}
+/* line 20, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline #headline-buttons {
+  margin-top: 30px;
+}
+/* line 24, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline .cus-btn {
+  color: white !important;
+  border-color: white !important;
+  border-width: 2px !important;
+  font-size: 1.5em !important;
+}
+/* line 29, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline .cus-btn#btn-pink {
+  background-color: #fa5072 !important;
+}
+/* line 31, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline .cus-btn#btn-pink:hover {
+  background-color: #FF1F4C !important;
+}
+/* line 35, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline .cus-btn#btn-blue {
+  background-color: #00a3e0 !important;
+}
+/* line 37, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#headline .cus-btn#btn-blue:hover {
+  background-color: #0088C0 !important;
+}
+
+/* line 46, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#workflow #title div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  text-align: center;
+  border-bottom: 2px solid gray;
+  padding-bottom: 10px;
+}
+/* line 56, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#workflow .workflow-step {
+  width: 80%;
+  margin: 30px auto 50px auto;
+}
+/* line 60, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+#workflow .workflow-step .workflow-title:after {
+  position: relative;
+  display: block;
+  padding-top: 10px;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  border-bottom: 3px solid #333;
+  content: '';
+}
+
+@media (max-width: 768px) {
+  /* line 75, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/home.css.scss */
+  #headline .cus-btn {
+    font-size: 1.2em !important;
+  }
+}
+/* line 4, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+body {
+  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+/* line 7, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 10, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+#body-wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -3em;
+}
+
+/* line 16, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+.footer, .push {
+  height: 3em;
+}
+
+/* line 20, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+#cus-navbar {
+  padding-top: 3px;
+  padding-bottom: 6px;
+  border-bottom: solid 1px #ccc;
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+/* line 27, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+#cus-navbar .cus-nav-nav a {
+  color: #575e6f !important;
+  float: right !important;
+}
+/* line 34, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+#cus-navbar .navbar-header {
+  float: left;
+}
+/* line 38, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+#cus-navbar .cus-nav-btn {
+  background-color: #00a3e0;
+  color: white;
+}
+/* line 43, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+#cus-navbar .cus-nav-btn:hover {
+  background-color: #0088C0 !important;
+}
+
+/* line 49, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+footer {
+  background-color: #0079AB;
+  color: white;
+  padding: 1em 0px;
+  /*position: fixed;*/
+}
+
+@media (max-width: 768px) {
+  /* line 57, /Users/peter/Desktop/Workspace/Proj/ruby_proj/HeySenior/app/assets/stylesheets/application.css.scss */
+  .cus-nav-nav {
+    margin: 7.5px -15px 0px !important;
+  }
+}
