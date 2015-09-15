@@ -6,6 +6,12 @@ $dark-blue: #363e4f;
 $cus-pink: #fa5072;
 $hover-pink: #FF1F4C;
 
+#index-page {
+  h1, h2, h3, h4, h5, p {
+    font-weight: 400 !important;
+  }
+}
+
 #headline {
   background-color: $main-blue;
   color: white;
@@ -33,11 +39,6 @@ $hover-pink: #FF1F4C;
       }
     }
   }
-
-  .cus-btn:hover {
-
-  }
-
 }
 
 #workflow {
