@@ -2,7 +2,13 @@
 <html>
 <head>
   <title>HeySenior</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+
+  <!-- user zoom is only disabled in the form input page. -->
+  <% if params['controller'] == 'home' && params['action'] == 'interest'  %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <% else %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% end %>
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
