@@ -13,33 +13,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="body-wrapper">
-    <nav class="navbar" id="cus-navbar">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <%= image_tag "logo-small.png", width: "134px" %>
-          </a>
-        </div>
 
-        <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
-          <button class="btn cus-nav-btn">Ask for Help</button>
-        </div>
-
-        <ul class="nav navbar-nav navbar-right cus-nav-nav">
-          <li><a href="#">Login</a></li>
-          <li><a href="#" class="visible-lg-inline visible-md-inline">Sign up</a></li>
-        </ul>
+  <nav class="navbar" id="cus-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <%= image_tag "logo-small.png", width: "134px" %>
+        </a>
       </div>
-    </nav>
 
-    <%= yield %>
-    <div class="push"></div>
-  </div>
+      <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
+        <button class="btn cus-blue-btn">Ask for Help</button>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right cus-nav-nav">
+        <li><a href="#">Login</a></li>
+        <li><a href="#" class="visible-lg-inline visible-md-inline">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <%= yield %>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <footer id="footer">
+  <footer class="footer">
     <div class="container">
       Copyright (c) 2015
     </div>

@@ -1,0 +1,40 @@
+#interest-page {
+  background-color: white;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  .center {
+    text-align: center;
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  #email-interest, #suggestion-box {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  form, label.h3 {
+    font-weight: 200;
+  }
+}
+
+@media (max-width: 768px) {
+  #interest-page {
+    h1, .h1 {
+      font-size: 28px;
+    }
+    h3, .h3 {
+      font-size: 18px;
+    }
+  }
+
+  .responsive-lg-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+  }
+}

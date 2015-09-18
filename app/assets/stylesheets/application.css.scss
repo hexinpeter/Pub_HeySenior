@@ -1,25 +1,22 @@
 @import "fonts";
-@import "home";
+@import "index";
+@import "interest";
 
 body {
   font-family: "Myriad Set Pro", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
-html, body {
-  height: 100%;
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 3em;
 }
 
 h1, h2, h3, h4, h5, p {
   font-weight: 400;
-}
-
-#body-wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -3em;
-}
-.footer, .push {
-  height: 3em;
 }
 
 #cus-navbar {
@@ -39,24 +36,28 @@ h1, h2, h3, h4, h5, p {
   .navbar-header {
     float: left;
   }
-
-  .cus-nav-btn {
-    background-color: $main-blue;
-    color: white;
-  }
-
-  .cus-nav-btn:hover {
-    background-color: $hover-blue;
-  }
-
 }
 
+.cus-blue-btn {
+  background-color: $main-blue;
+  color: white;
+}
+
+.cus-blue-btn:hover {
+  background-color: $hover-blue;
+  color: white;
+}
+
+
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #0079AB;
   color: white;
   padding: 1em 0px;
-  /*position: fixed;*/
 }
+
 
 @media (max-width: 768px) {
   .cus-nav-nav {
