@@ -2,11 +2,16 @@
 @import "home";
 
 body {
-  font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+  font-family: "Myriad Set Pro", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 html, body {
   height: 100%;
 }
+
+h1, h2, h3, h4, h5, p {
+  font-weight: 400;
+}
+
 #body-wrapper {
   min-height: 100%;
   height: auto !important;
@@ -25,8 +30,8 @@ html, body {
   margin-bottom: 0px;
   .cus-nav-nav {
     a {
-      color: #575e6f !important;
-      float: right!important;
+      color: #575e6f;
+      float: right !important;
     }
 
   }
@@ -41,7 +46,7 @@ html, body {
   }
 
   .cus-nav-btn:hover {
-    background-color: $hover-blue !important;
+    background-color: $hover-blue;
   }
 
 }
@@ -55,6 +60,6 @@ footer {
 
 @media (max-width: 768px) {
   .cus-nav-nav {
-    margin: 7.5px -15px 0px !important;
+    margin: 7.5px -15px 0px;
   }
 }

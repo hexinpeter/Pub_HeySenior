@@ -6,12 +6,6 @@ $dark-blue: #363e4f;
 $cus-pink: #fa5072;
 $hover-pink: #FF1F4C;
 
-#index-page {
-  h1, h2, h3, h4, h5, p {
-    font-weight: 400 !important;
-  }
-}
-
 #headline {
   background-color: $main-blue;
   color: white;
@@ -22,20 +16,20 @@ $hover-pink: #FF1F4C;
   }
 
   .cus-btn {
-    color: white !important;
-    border-color: white !important;
-    border-width: 2px !important;
-    font-size: 1.5em !important;
+    color: white;
+    border-color: white;
+    border-width: 2px;
+    font-size: 1.5em;
     &#btn-pink {
-      background-color: $cus-pink !important;
+      background-color: $cus-pink;
       &:hover {
-        background-color: $hover-pink !important;
+        background-color: $hover-pink;
       }
     }
     &#btn-blue {
-      background-color: $main-blue !important;
+      background-color: $main-blue;
       &:hover {
-        background-color: $hover-blue !important;
+        background-color: $hover-blue;
       }
     }
   }
@@ -73,6 +67,6 @@ $hover-pink: #FF1F4C;
 
 @media (max-width: 768px) {
   #headline .cus-btn {
-    font-size: 1.2em !important;
+    font-size: 1.2em;
   }
 }
