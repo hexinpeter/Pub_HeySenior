@@ -1,0 +1,22 @@
+$cus-black: #26282e;
+$main-blue: #00a3e0;
+$hover-blue: #0088C0;
+$light-blue: #66c8ec;
+$dark-blue: #363e4f;
+$cus-pink: #fa5072;
+$hover-pink: #FF1F4C;
+
+.cus-blue-btn {
+  background-color: $main-blue;
+  color: white;
+}
+
+.cus-blue-btn:hover {
+  background-color: $hover-blue;
+  color: white;
+}
+
+.no-style-link a, a.no-style-link {
+  color: white;
+  text-decoration: none;
+}

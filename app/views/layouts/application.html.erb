@@ -29,12 +29,12 @@
       </div>
 
       <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
-        <button class="btn cus-blue-btn">Ask for Help</button>
+        <button class="btn cus-blue-btn no-style-link"><%= link_to "Ask for Help", interest_path(page: 'ask_for_help') %></button>
       </div>
 
       <ul class="nav navbar-nav navbar-right cus-nav-nav">
-        <li><a href="#">Login</a></li>
-        <li><a href="#" class="visible-lg-inline visible-md-inline">Sign up</a></li>
+        <li><%= link_to "Login", interest_path(page: 'login') %></li>
+        <li><%= link_to "Sign up", interest_path(page: 'sign_up'), class: "visible-lg-inline visible-md-inline" %></li>
       </ul>
     </div>
   </nav>
@@ -45,7 +45,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <footer class="footer">
     <div class="container">
-      Copyright (c) 2015
+      Copyright (c) 2015 <br>
+      Contact Us: &nbsp;&nbsp;<a href="mailto:heysenior.com@gmail.com" class="no-style-link">heysenior.com@gmail.com</a>
+
     </div>
   </footer>
 </body>

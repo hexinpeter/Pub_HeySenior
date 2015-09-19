@@ -1,15 +1,16 @@
 div#index-page
   div.jumbotron#headline
     div.container
-      h1 Get study help from your seniors
+      h1 Find tutors easily from your seniors
       div#headline-buttons
         div.row
           div.col-md-1.col-sm-3.col-md-offset-4.col-sm-offset-3
-            a href="#"
-              h4.btn.btn-default.cus-btn#btn-blue Find a Senior
+            h4.btn.btn-default.cus-btn#btn-blue.no-style-link
+              = link_to "Find a Senior", interest_path( page: 'find_a_senior' )
+              / h4.btn.btn-default.cus-btn#btn-blue Find a Senior
           div.col-md-1.col-sm-3.col-md-offset-1
-            a href="#"
-              h4.btn.btn-default.cus-btn#btn-pink I'm a Senior
+            h4.btn.btn-default.cus-btn#btn-pink.no-style-link
+              = link_to "I'm a Senior", interest_path( page: 'im_a_senior' )
 
   div.container
     div#workflow
