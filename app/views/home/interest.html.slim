@@ -3,13 +3,13 @@ div#interest-page
     div#top-1
       h1#sorry Sorry, we're still building this
     div#top-2
-      form
+      = form_for :interest, url: interests_path do |f|
         div.form-group
-          label.h3 for="email-interest" Leave your email below, we will give you early access soon
-          input.form-control#email-interest type="email" placeholder="Email"
+          = f.label :email, 'Leave your email below, we will give you early access soon', class: 'h3'
+          = f.text_field :email, class: 'form-control', id: 'email-interest', placeholder: 'Email', required: true
         div.form-group
-          label.h3 Any suggestions to us too?
-          textarea.form-control#suggestion-box rows="4" placeholder="Your feedback will be deeply appreciated. Thanks"
-        button.btn.cus-blue-btn.btn-lg.responsive-lg-btn type="submit" Submit
+          = f.label :feedback, 'Any suggestions to us too?', class: 'h3'
+          = f.text_area :feedback, class: 'form-control', id: 'suggestion-box', rows: '4', placeholder: 'Your feedback will be deeply appreciated. Thanks'
+        = f.submit 'Submit', class: 'btn cus-blue-btn btn-lg responsive-lg-btn'
 
 

@@ -1,4 +1,5 @@
 @import "fonts";
+@import "variables";
 @import "shared";
 @import "index";
 @import "interest";
@@ -39,7 +40,6 @@ h1, h2, h3, h4, h5, p {
   }
 }
 
-
 footer {
   position: absolute;
   bottom: 0;
@@ -48,6 +48,13 @@ footer {
   color: white;
   padding: 1em 0px;
 }
+
+#flash-message {
+  position: absolute;
+  opacity: 0.9;
+  width: 100%;
+}
+
 
 
 @media (max-width: 768px) {
