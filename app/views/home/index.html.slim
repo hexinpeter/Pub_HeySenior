@@ -5,12 +5,12 @@ div#index-page
       div#headline-buttons
         div.row
           div.col-md-1.col-sm-3.col-md-offset-4.col-sm-offset-3
-            h4.btn.btn-default.cus-btn#btn-blue.no-style-link
-              = link_to "Find a Senior", interest_path( page: 'find_a_senior' )
-              / h4.btn.btn-default.cus-btn#btn-blue Find a Senior
+            = link_to interest_path( page: 'find_a_senior' ) do
+              h4.btn.btn-default.cus-btn#btn-blue.no-style-link Find a Senior
+
           div.col-md-1.col-sm-3.col-md-offset-1
-            h4.btn.btn-default.cus-btn#btn-pink.no-style-link
-              = link_to "I'm a Senior", interest_path( page: 'im_a_senior' )
+            = link_to interest_path( page: 'im_a_senior' ) do
+              h4.btn.btn-default.cus-btn#btn-pink.no-style-link I'm a Senior
 
   div.container
     div#workflow
