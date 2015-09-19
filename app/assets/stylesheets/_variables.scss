@@ -1,7 +1,7 @@
 $cus-black: #26282e;
 $main-blue: #00a3e0;
-$hover-blue: darken($main-blue, 10%);
+$hover-blue: darken($main-blue, 5%);
 $light-blue: #66c8ec;
 $dark-blue: #363e4f;
 $cus-pink: #fa5072;
-$hover-pink: #FF1F4C;
+$hover-pink: darken($cus-pink, 5%);
