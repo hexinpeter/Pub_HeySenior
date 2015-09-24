@@ -1,66 +1,68 @@
 @import "variables";
 
-#headline {
-  background-color: $main-blue;
-  color: white;
-  text-align: center;
-
-  #headline-buttons {
-    margin-top: 30px;
-  }
-
-  .cus-btn {
+#home-index-page {
+  #headline {
+    background-color: $main-blue;
     color: white;
-    border-color: white;
-    border-width: 2px;
-    font-size: 1.5em;
-    &#btn-pink {
-      background-color: $cus-pink;
-      &:hover {
-        background-color: $hover-pink;
-      }
+    text-align: center;
+
+    #headline-buttons {
+      margin-top: 30px;
     }
-    &#btn-blue {
-      background-color: $main-blue;
-      &:hover {
-        background-color: $hover-blue;
+
+    .cus-btn {
+      color: white;
+      border-color: white;
+      border-width: 2px;
+      font-size: 1.5em;
+      &#btn-pink {
+        background-color: $cus-pink;
+        &:hover {
+          background-color: $hover-pink;
+        }
+      }
+      &#btn-blue {
+        background-color: $main-blue;
+        &:hover {
+          background-color: $hover-blue;
+        }
       }
     }
   }
-}
 
-#workflow {
-  #title {
-    div {
-      margin-left: auto;
-      margin-right: auto;
-      width: 200px;
-      text-align: center;
-      border-bottom: 2px solid gray;
-      padding-bottom: 10px;
-    }
-  }
-
-  .workflow-step {
-    width: 80%;
-    margin: 30px auto 50px auto;
-
-    .workflow-title:after {
-      position: relative;
-      display: block;
-      padding-top: 10px;
-      bottom: 0;
-      left: 0;
-      width: 70px;
-      border-bottom: 3px solid #333;
-      content: '';
+  #workflow {
+    #title {
+      div {
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        text-align: center;
+        border-bottom: 2px solid gray;
+        padding-bottom: 10px;
+      }
     }
 
+    .workflow-step {
+      width: 80%;
+      margin: 30px auto 50px auto;
+
+      .workflow-title:after {
+        position: relative;
+        display: block;
+        padding-top: 10px;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        border-bottom: 3px solid #333;
+        content: '';
+      }
+
+    }
   }
 }
 
 @media (max-width: 768px) {
-  #headline .cus-btn {
+  #home-index-page #headline .cus-btn {
     font-size: 1.2em;
   }
 }

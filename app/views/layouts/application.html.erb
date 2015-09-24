@@ -50,7 +50,10 @@
   </nav>
 
   <%= render 'layouts/messages' %>
-  <%= yield %>
+
+  <div id="<%= params['controller'] %>-<%= params['action'] %>-page">
+    <%= yield %>
+  </div>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
