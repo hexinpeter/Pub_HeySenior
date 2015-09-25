@@ -37,14 +37,14 @@
       </div>
 
       <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
-        <%= link_to interest_path(page: 'ask_for_help') do %>
-          <button class="btn cus-blue-btn no-style-link">Ask for Help</button>
+        <%= link_to destroy_user_session_path, method: 'DELETE' do %>
+          <button class="btn cus-blue-btn no-style-link">Sign Out</button>
         <% end %>
       </div>
 
       <ul class="nav navbar-nav navbar-right cus-nav-nav">
-        <li><%= link_to "Login", interest_path(page: 'login') %></li>
-        <li><%= link_to "Sign up", interest_path(page: 'sign_up'), class: "visible-lg-inline visible-md-inline" %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, class: "visible-lg-inline visible-md-inline" %></li>
       </ul>
     </div>
   </nav>
