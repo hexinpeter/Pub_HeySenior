@@ -51,7 +51,7 @@
 
   <%= render 'layouts/messages' %>
 
-  <div id="<%= params['controller'] %>-<%= params['action'] %>-page">
+  <div id="<%= params['controller'].sub('/', '-') %>-<%= params['action'] %>-page">
     <%= yield %>
   </div>
 

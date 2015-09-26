@@ -1,14 +1,19 @@
-h2 Sign up
+div.container
+  h2 Sign up
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.input :name, required: true, label: false, placeholder: 'Full Name'
-  = f.input :email, required: true, label: false, placeholder: 'Email'
-  = f.input :password, required: true, label: false, placeholder: 'Password'
-  / = f.input :password_confirmation
-  = f.input :role, collection: ['student', 'senior'],
-            label_method: ->(obj){ "#{obj.capitalize}" },
-            label: false,
-            as: :radio_buttons
-  = f.button :submit, 'Create Account', class: 'submit'
+  = simple_form_for(resource,
+                    as: resource_name,
+                    url: registration_path(resource_name),
+                    defaults: {wrapper_html: { class: 'form-input' }}) do |f|
+    = f.input :name, required: true, label: false, placeholder: 'Full Name'
+    = f.input :email, required: true, label: false, placeholder: 'Email'
+    = f.input :password, required: true, label: false, placeholder: 'Password'
+    / = f.input :password_confirmation
+    h3 I'm a
+    = f.input :role, collection: ['student', 'senior'],
+              label_method: ->(obj){ "#{obj.capitalize}" },
+              label: false,
+              as: :radio_buttons
+    = f.button :submit, 'Create Account', class: 'btn-lg cus-success-btn submit-btn'
 
-= render "devise/shared/links"
+  / = render "devise/shared/links"

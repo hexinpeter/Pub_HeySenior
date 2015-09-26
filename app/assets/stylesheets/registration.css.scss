@@ -1,0 +1,51 @@
+#devise-registrations-new-page, #devise-registrations-create-page {
+  margin-top: 30px;
+  text-align: center;
+  form {
+    margin-top: 30px;
+  }
+  .form-input {
+    max-width: 400px;
+    margin: 25px auto;
+    input {
+      border: 0;
+      border-bottom: 1px solid #d7d7d9;
+      border-radius: 0px;
+      text-align: center;
+      box-shadow: none;
+    }
+    input:focus {
+      border: 1px solid #ccc;
+      background: #f5f5f7;
+    }
+  }
+  .user_role {
+    margin: -8px auto 20px;
+    .radio {
+      display: inline-block;
+      label {
+        padding: 8px 15px 8px 30px;
+        margin-left: -2px;
+        display: inline-block;
+        border: 1px solid #c2c6cc;
+        text-shadow: 0 -1px transparent !important;
+        background: linear-gradient(to bottom, #fff 0, #edeef0 100%);
+      }
+      label[for="user_role_student"] {
+        border-radius: 4px 0px 0px 4px;
+      }
+      label[for="user_role_senior"] {
+        border-radius: 0px 4px 4px 0px;
+        border-left: 0px;
+      }
+    }
+  }
+
+  .submit-btn {
+    border: none;
+    margin: 10px auto 40px;
+    width: 178px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}

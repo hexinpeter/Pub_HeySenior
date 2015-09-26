@@ -10,6 +10,17 @@
   color: white;
 }
 
+.cus-success-btn {
+  background-color: #6AC56A;
+  color: white;
+}
+
+.cus-success-btn:hover {
+  background-color: darken(#6AC56A, 5%);
+  color: white;
+}
+
+
 .no-style-link a, a.no-style-link {
   color: white;
   text-decoration: none;
