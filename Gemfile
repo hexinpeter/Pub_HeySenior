@@ -28,6 +28,7 @@ gem "figaro"
 
 gem 'slim'
 gem 'puma'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 # User authentication
 gem 'devise'
