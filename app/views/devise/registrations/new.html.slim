@@ -6,8 +6,8 @@ div.container
                     url: registration_path(resource_name),
                     defaults: {wrapper_html: { class: 'form-input' }}) do |f|
     = f.input :name, required: true, label: false, placeholder: 'Full Name'
-    = f.input :email, required: true, label: false, placeholder: 'Email'
-    = f.input :password, required: true, label: false, placeholder: 'Password'
+    = f.input :email, required: true, label: false, placeholder: 'Email', input_html: { autocomplete: 'username'}
+    = f.input :password, required: true, label: false, placeholder: 'Password', input_html: { autocomplete: 'new-password'}
     / = f.input :password_confirmation
     h3 I'm a
     = f.input :role, collection: ['student', 'senior'],
