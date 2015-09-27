@@ -1,0 +1,9 @@
+// user zoom is disabled in the form input page.
+
+- current_page = "#{params['controller'].sub('/', '-')}-#{params['action']}"
+- no_zoom = ['home-interest', 'devise-registrations-new', 'devise-registrations-create', 'devise-sessions-new', 'devise-sessions-create', 'devise-passwords-new', 'devise-passwords-create']
+
+- if no_zoom.include? current_page
+  meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+- else
+  meta name="viewport" content="width=device-width, initial-scale=1.0"

@@ -3,13 +3,7 @@
 <head>
   <title>HeySenior</title>
 
-  <!-- user zoom is only disabled in the form input page. -->
-  <% if params['controller'] == 'home' && params['action'] == 'interest'  %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-  <% else %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <% end %>
-
+  <%= render 'layouts/viewport' %>
   <!-- Open Graph Protocal for Facebook Crawler -->
   <meta property="fb:admins" content="1228048208" />
   <meta property="og:title" content="HeySenior -- Find Tutors Easily" />
