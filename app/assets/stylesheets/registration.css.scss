@@ -1,4 +1,4 @@
-#devise-registrations-new-page, #devise-registrations-create-page, #devise-sessions-new-page, #devise-sessions-create-page, #devise-passwords-new-page, #devise-passwords-create-page {
+#devise-registrations-new-page, #devise-registrations-create-page, #devise-sessions-new-page, #devise-sessions-create-page, #devise-passwords-new-page, #devise-passwords-create-page, #devise-passwords-edit-page, #devise-passwords-update-page {
   margin-top: 30px;
   text-align: center;
   form {
@@ -51,12 +51,21 @@
     margin-bottom: 20px;
   }
 
-  #password-new-email {
+  .box-input-style {
     max-width: 400px;
     margin: 10px auto 20px;
   }
 
   #reset-password-request-btn {
     margin-bottom: 20px;
+  }
+  .devise-error-message {
+    color: red;
+    h2 {
+      font-size: medium;
+    }
+    li {
+      list-style-type: none;
+    }
   }
 }

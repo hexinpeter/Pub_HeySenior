@@ -3,21 +3,21 @@
 .cus-blue-btn {
   background-color: $main-blue;
   color: white;
-}
-
-.cus-blue-btn:hover {
-  background-color: $hover-blue;
-  color: white;
+  border: none;
+  &:hover, &:focus, &:active {
+    background-color: $hover-blue;
+    color: white;
+  }
 }
 
 .cus-success-btn {
   background-color: #6AC56A;
   color: white;
-}
-
-.cus-success-btn:hover {
-  background-color: darken(#6AC56A, 5%);
-  color: white;
+  border: none;
+  &:hover, &:focus, &:active {
+    background-color: darken(#6AC56A, 5%);
+    color: white;
+  }
 }
 
 
