@@ -1,4 +1,4 @@
-#devise-registrations-new-page, #devise-registrations-create-page, #devise-sessions-new-page, #devise-sessions-create-page {
+#devise-registrations-new-page, #devise-registrations-create-page, #devise-sessions-new-page, #devise-sessions-create-page, #devise-passwords-new-page, #devise-passwords-create-page {
   margin-top: 30px;
   text-align: center;
   form {
@@ -47,5 +47,17 @@
     width: 178px;
     font-weight: 600;
     font-size: 20px;
+  }
+  #forgot-password-field {
+    margin-bottom: 20px;
+  }
+
+  #password-new-email {
+    max-width: 400px;
+    margin: 10px auto 20px;
+  }
+
+  #reset-password-request-btn {
+    margin-bottom: 20px;
   }
 }

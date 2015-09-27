@@ -28,26 +28,7 @@
 </head>
 <body>
 
-  <nav class="navbar" id="cus-navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">
-          <%= image_tag "logo-small.png", width: "134px" %>
-        </a>
-      </div>
-
-      <div class="navbar-form navbar-right visible-lg-inline visible-md-inline">
-        <%= link_to destroy_user_session_path, method: 'DELETE' do %>
-          <button class="btn cus-blue-btn no-style-link">Sign Out</button>
-        <% end %>
-      </div>
-
-      <ul class="nav navbar-nav navbar-right cus-nav-nav">
-        <li><%= link_to "Login", new_user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path, class: "visible-lg-inline visible-md-inline" %></li>
-      </ul>
-    </div>
-  </nav>
+  <%= render 'layouts/navbar' %>
 
   <%= render 'layouts/messages' %>
 
