@@ -10,3 +10,9 @@ schools = ActiveSupport::JSON.decode(File.read('db/seeds/schools.json'))
 schools['schools'].each do |school|
   School.create name: school['name']
 end
+p "schools populated"
+
+if Rails.env.development?
+  User.create email: "user@example.com", password: "heysenior", name: "Example User", role: "student"
+  p 'example user created'
+end

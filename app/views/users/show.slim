@@ -1,0 +1,30 @@
+div.container
+  div#profile-page-body
+    div.basic-info
+      div.row
+        div.col-sm-3.col-sm-offset-1
+          div#user-photo
+            = render 'users/blank_photo.svg'
+            / = image_tag asset_path('profile.jpg')
+            br
+            = link_to "change", '#'
+        div.col-sm-8
+          div#user-info-panel
+            div#user-name
+              h1 = @user.name
+            div#user-detail-field
+              p
+                span#label email:
+                = @user.email
+            div#user-detail-field
+              p
+                span#label school:
+                = @user.school.present? ? @user.school.name : "&nbsp;".html_safe
+            div#user-detail-field
+              p
+                span#label phone:
+                = @user.phone.present? ? @user.phone : "&nbsp;".html_safe
+    = link_to edit_user_path do
+        button.btn.btn-lg.cus-blue-btn#edit-profile.no-style-link Edit Profile
+
+    div.student-info

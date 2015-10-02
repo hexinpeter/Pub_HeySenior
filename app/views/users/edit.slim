@@ -1,0 +1,10 @@
+div.container
+  = simple_form_for(@user.profile,
+                    url: user_path,
+                    html: { method: :put }) do |f|
+    - user_school_id = @user.profile.school.present? ? @user.profile.school.id : nil
+    = f.input :school, collection: School.all, selected: user_school_id
+    = f.input :phone, input_html: { value: @user.profile.phone}
+    = f.button :submit
+  = link_to user_path do
+      button.btn.cus-blue-btn.no-style-link Cancel

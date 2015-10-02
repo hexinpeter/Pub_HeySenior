@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :interests, only: [:create]
 
+  resource :users, path: '/profile', only: [:edit, :update, :show], as: 'user' do
+    get :dashboard
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
