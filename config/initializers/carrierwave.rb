@@ -2,7 +2,7 @@
 
 CarrierWave.configure do |config|
   config.storage    = :aws
-  config.aws_bucket = ENV['aws_bucket']
+  config.aws_bucket = Figaro.env.aws_bucket
   config.aws_acl    = 'public-read'
 
   # Optionally define an asset host for configurations that are fronted by a
@@ -19,9 +19,9 @@ CarrierWave.configure do |config|
   # }
 
   config.aws_credentials = {
-    access_key_id:     ENV['aws_access_key_id'],
-    secret_access_key: ENV['aws_secret_access_key'], # ENV.fetch('AWS_SECRET_ACCESS_KEY')
-    region:            ENV['aws_s3_region'] # Required
+    access_key_id:     Figaro.env.aws_access_key_id,
+    secret_access_key: Figaro.env.aws_secret_access_key, # ENV.fetch('AWS_SECRET_ACCESS_KEY')
+    region:            Figaro.env.aws_s3_region # Required
   }
 
   # Optional: Signing of download urls, e.g. for serving private
