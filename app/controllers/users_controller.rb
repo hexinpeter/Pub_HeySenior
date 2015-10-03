@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
 
     def profile_params
-      input = params.require(:profile).permit(:school, :phone)
+      input = params.require(:profile).permit(:school, :phone, :photo)
       input['school'] = School.find_by_id(input['school'])
       input
     end

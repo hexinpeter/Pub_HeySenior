@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates :name, :role, presence: true
 
-  delegate :phone, :school, to: :profile
+  delegate :phone, :school, :photo, to: :profile
 
   private
     def create_credentials

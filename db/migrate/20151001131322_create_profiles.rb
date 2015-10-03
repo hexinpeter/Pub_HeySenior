@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.references :school, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
       t.string :phone
+      t.string :photo
 
       t.timestamps null: false
     end

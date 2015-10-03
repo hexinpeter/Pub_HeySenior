@@ -4,10 +4,18 @@ div.container
       div.row
         div.col-sm-3.col-sm-offset-1
           div#user-photo
-            = render 'users/blank_photo.svg'
+            - if @user.photo.present?
+              = image_tag @user.photo.url
+            - else
+              = render 'users/blank_photo.svg'
             / = image_tag asset_path('profile.jpg')
             br
-            = link_to "change", '#'
+            = simple_form_for(@user.profile,
+                              url: user_path,
+                              html: { method: :put, multipart: true }) do |f|
+              = f.file_field :photo
+              = f.hidden_field :photo_cache
+              = f.button :submit, 'Update'
         div.col-sm-8
           div#user-info-panel
             div#user-name

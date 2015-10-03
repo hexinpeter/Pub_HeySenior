@@ -7,4 +7,6 @@ class Profile < ActiveRecord::Base
             format: { with: %r{\A((\+61)|0)\d{9}\Z}ix,
                       message: "Please provide a valid Australian number. No spaces." },
             allow_blank: true
+
+  mount_uploader :photo, FileUploader
 end
