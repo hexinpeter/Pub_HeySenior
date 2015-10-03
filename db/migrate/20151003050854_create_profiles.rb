@@ -6,6 +6,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.references :city, index: true
       t.string :phone
       t.string :photo
+      t.text :description
 
       t.timestamps null: false
     end

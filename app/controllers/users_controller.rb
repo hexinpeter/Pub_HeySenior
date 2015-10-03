@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.profile.update(profile_params)
-      render :show
+      redirect_to user_path
     else
       render :edit
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     end
 
     def profile_params
-      input = params.require(:profile).permit(:school, :phone, :photo, :city)
+      input = params.require(:profile).permit(:school, :phone, :photo, :city, :description)
       input['school'] = School.find_by_id(input['school'])
       input['city'] = City.find_by_id(input['city'])
       input

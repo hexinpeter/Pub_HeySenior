@@ -2,12 +2,13 @@ div.container
   = simple_form_for(@user.profile,
                     url: user_path,
                     html: { method: :put }) do |f|
-    - user_school_id = @user.profile.school.present? ? @user.profile.school.id : nil
-    - user_city_id = @user.profile.city.present? ? @user.profile.city.id : nil
+    - user_school_id = @user.school.present? ? @user.school.id : nil
+    - user_city_id = @user.city.present? ? @user.city.id : nil
     = f.input :school, collection: School.all, selected: user_school_id
     = f.input :city, collection: City.order(:name), selected: user_city_id
-    = f.input :phone, input_html: { value: @user.profile.phone},
-              hint: 'Your phone will only be revealed to seniors whom you\'ve confirmed to meet.'
+    = f.input :phone, input_html: { value: @user.phone},
+              hint: 'Your number will only be revealed to the seniors whom you\'ve confirmed to meet.'
+    = f.input :description, input_html: { value: @user.description}
     = f.button :submit
   = link_to user_path do
       button.btn.cus-blue-btn.no-style-link Cancel

@@ -23,6 +23,7 @@ end
 p "cities populated"
 
 if Rails.env.development?
+  User.find_by_email('user@example.com').delete if User.find_by_email('user@example.com')
   User.create email: "user@example.com", password: "heysenior", name: "Example User", role: "student"
   p 'example user created'
 end

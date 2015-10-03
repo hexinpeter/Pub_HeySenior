@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20151003050854) do
     t.integer  "city_id"
     t.string   "phone"
     t.string   "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "profiles", ["city_id"], name: "index_profiles_on_city_id", using: :btree
