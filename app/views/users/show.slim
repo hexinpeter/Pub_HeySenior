@@ -30,12 +30,12 @@ div.container
                 = @user.school.present? ? @user.school.name : "&nbsp;".html_safe
             div#user-detail-field
               p
-                span#label phone:
-                = @user.phone.present? ? @user.phone : "&nbsp;".html_safe
-            div#user-detail-field
-              p
                 span#label city:
                 = @user.city.present? ? @user.city.name : "&nbsp;".html_safe
+            div#user-detail-field
+              p
+                span#label phone:
+                = @user.phone.present? ? @user.phone : "&nbsp;".html_safe
     = link_to edit_user_path do
         button.btn.btn-lg.cus-blue-btn#edit-profile.no-style-link Edit Profile
 
