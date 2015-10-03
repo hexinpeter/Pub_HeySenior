@@ -8,7 +8,7 @@ div.container
     = f.input :city, collection: City.order(:name), selected: user_city_id
     = f.input :phone, input_html: { value: @user.phone},
               hint: 'Your number will only be revealed to the seniors whom you\'ve confirmed to meet.'
-    = f.input :description, input_html: { value: @user.description}
+    = f.input :description, label: 'Introduction', input_html: { value: @user.description}
     = f.button :submit
   = link_to user_path do
       button.btn.cus-blue-btn.no-style-link Cancel

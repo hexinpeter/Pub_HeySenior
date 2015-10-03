@@ -1,5 +1,5 @@
-Sydney (Capital),NSW
-Albury (NSW-Victoria border),NSW
+Sydney,NSW
+Albury,NSW
 Armidale,NSW
 Bathurst,NSW
 Broken Hill,NSW
@@ -17,19 +17,19 @@ Newcastle,NSW
 Nowra,NSW
 Orange,NSW
 Port Macquarie,NSW
-Queanbeyan (adjacent to Canberra),NSW
+Queanbeyan,NSW
 Tamworth,NSW
-Tweed Heads (NSW-Queensland border),NSW
+Tweed Heads,NSW
 Wagga Wagga,NSW
 Wollongong,NSW
 Wyong,NSW
 ,
-Darwin (Capital),NT
+Darwin,NT
 Alice Springs,NT
 Katherine,NT
 Palmerston,NT
 ,
-Brisbane (Capital),QLD
+Brisbane,QLD
 Bundaberg,QLD
 Cairns,QLD
 Charters Towers,QLD
@@ -45,12 +45,12 @@ Mount Isa,QLD
 Nambour,QLD
 Redcliffe,QLD
 Rockhampton,QLD
-Sunshine Coast {region},QLD
+Sunshine Coast,QLD
 Thuringowa,QLD
 Toowoomba,QLD
 Townsville,QLD
 ,
-Adelaide (Capital),SA
+Adelaide,SA
 Gladstone,SA
 Mount Gambier,SA
 Murray Bridge,SA
@@ -60,14 +60,14 @@ Port Lincoln,SA
 Victor Harbor,SA
 Whyalla,SA
 ,
-Hobart (Capital),TAS
+Hobart,TAS
 Burnie,TAS
 Clarence,TAS
 Devonport,TAS
 Glenorchy,TAS
 Launceston,TAS
 ,
-Melbourne (Capital),VIC
+Melbourne,VIC
 Benalla,VIC
 Ballarat,VIC
 Bendigo,VIC
@@ -80,7 +80,7 @@ Wangaratta,VIC
 Warrnambool,VIC
 Wodonga,VIC
 ,
-Perth (Capital),WA
+Perth,WA
 Albany,WA
 Broome,WA
 Bunbury,WA
