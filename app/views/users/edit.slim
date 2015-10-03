@@ -3,8 +3,11 @@ div.container
                     url: user_path,
                     html: { method: :put }) do |f|
     - user_school_id = @user.profile.school.present? ? @user.profile.school.id : nil
+    - user_city_id = @user.profile.city.present? ? @user.profile.city.id : nil
     = f.input :school, collection: School.all, selected: user_school_id
-    = f.input :phone, input_html: { value: @user.profile.phone}
+    = f.input :city, collection: City.order(:name), selected: user_city_id
+    = f.input :phone, input_html: { value: @user.profile.phone},
+              hint: 'Your phone will only be revealed to seniors whom you\'ve confirmed to meet.'
     = f.button :submit
   = link_to user_path do
       button.btn.cus-blue-btn.no-style-link Cancel
