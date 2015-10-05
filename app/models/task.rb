@@ -5,6 +5,6 @@ class Task < ActiveRecord::Base
   belongs_to :subject_area
 
   def default_values
-    self.status ||= 'published'
+    self.status ||= 'open'
   end
 end

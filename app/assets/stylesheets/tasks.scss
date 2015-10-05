@@ -1,3 +1,22 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#tasks-index-page {
+  .header {
+    text-align: center;
+    margin: 50px 0;
+  }
+
+  #task-table {
+    tr {
+      cursor: pointer;
+    }
+    td .location {
+      margin-top: 5px;
+      display: inline-block;
+      background-color: rgb(231, 231, 231);
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  }
+}

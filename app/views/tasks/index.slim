@@ -1,0 +1,41 @@
+div.container
+  p id="notice" = notice
+
+  h1.header Consultation Requests
+
+  div.table-responsive#task-table
+    table.table.table-hover
+      colgroup
+          col style="width:60%"
+          col style="width:15%"
+          col style="width:15%"
+      thead
+        tr
+          th Consultation Requests
+          th Subject
+          th Suggested price
+          th Status
+
+      tbody
+        - @tasks.each do |task|
+          tr
+            td
+              div.title.h4
+                = link_to task.title, task
+              div.description
+                = task.description
+              div.location
+                = "Tutoring Location: #{task.location}"
+            td
+              div.subject
+                = task.subject
+              div.school
+                = task.user.school.name
+            td
+              = "$#{task.lower_price} - $#{task.upper_price}"
+            td = task.status
+
+
+  / = link_to 'New Task', new_task_path
+
+
