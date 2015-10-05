@@ -25,26 +25,23 @@ h1, h2, h3, h4, h5, p {
   font-weight: 400;
 }
 
-#cus-navbar {
-  padding-top: 3px;
-  padding-bottom: 6px;
-  border-bottom: solid 1px #ccc;
-  border-radius: 0px;
+#cus-nav {
+  background-color: white;
   margin-bottom: 0px;
-  .cus-nav-nav {
-    a {
-      color: #575e6f;
-      float: right !important;
+  border-radius: 0px;
+  padding: 2px 0;
+  .navbar-brand img {
+    position: relative;
+    top: -5px;
+    margin-right: 10px;
+  }
+  #bs-example-navbar-collapse-1 {
+    & > ul > li > a {
+      font-size: 15px;
     }
-  }
-  #user-name {
-    font-size: 17px;
-  }
-  .navbar-header {
-    float: left;
-  }
-  .dropdown-menu li a{
-    width: 100%;
+    #site-links {
+      font-weight: 600;
+    }
   }
 }
 
