@@ -1,0 +1,30 @@
+div#task-form
+  = simple_form_for(@task) do |f|
+    = f.error_notification
+
+    div class="form-inputs"
+      / = f.association :user
+      div.row
+        div.col-sm-4.col-md-3
+          = f.association :subject_area, required: false
+        div.col-sm-4
+          = f.input :subject, required: false
+      = f.input :title, input_html: { rows: "1"}, required: false
+      = f.input :description, input_html: { rows: "5"}
+      / div#task_suggested_price.form-group
+      /   = f.input :lower_price, label: 'Suggested Price', required: false
+      /   = f.input :upper_price, label: false
+      div#task_suggested_price.form-group
+        label class="decimal optional control-label" for="task_lower_price" Suggested Price
+        div.input-group
+          div.input-group-addon $
+          = f.input_field :lower_price, class: 'form-control'
+          div.form-control#price-to to
+          = f.input_field :upper_price, class: 'form-control'
+      = f.input :location, label: "Tutoring Location", required: false
+      / = f.input :status
+
+    div.form-actions
+      = f.button :submit, class: "cus-success-btn"
+
+

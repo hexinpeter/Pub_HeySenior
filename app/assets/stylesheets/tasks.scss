@@ -21,6 +21,29 @@
   }
 }
 
+#task-form form {
+  #task_subject_area_id, #task_subject {
+    width: 200px;
+  }
+  #task_title {
+    max-width: 500px;
+  }
+  #task_description {
+    max-width: 500px;
+  }
+  #task_lower_price, #task_upper_price {
+    width: 70px;
+  }
+  #price-to {
+    width: 39px;
+    border: none;
+    box-shadow: none !important;
+  }
+  #task_location {
+    max-width: 300px;
+  }
+}
+
 
 #tasks-show-page {
   .panel {
