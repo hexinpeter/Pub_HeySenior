@@ -4,6 +4,8 @@ class Task < ActiveRecord::Base
   belongs_to :user
   belongs_to :subject_area
 
+  validates :user, :subject_area, :subject, :upper_price, :lower_price, :location, :title, presence: true
+
   def default_values
     self.status ||= 'open'
   end

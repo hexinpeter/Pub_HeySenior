@@ -1,0 +1,63 @@
+div.container
+  h2.task-title = @task.title
+
+  div.panel.panel-default
+    div.panel-heading
+      div.row
+        div.col-xs-6
+          div#left-info
+            div.row
+              div.col-xs-4
+                div#bids
+                  div Bids
+                  div#bids-num 4
+              div.col-xs-8#budget
+                  div Budget
+                  div#budget-num
+                    = "$#{@task.lower_price} - $#{@task.upper_price}"
+        div.col-xs-6
+          div#right-info
+            div#status
+              = @task.status
+    div.panel-body
+      Panel
+        div.row
+          div.col-sm-7
+            h4 Request Description
+            p = @task.description
+            div.divider
+            div#additional-info
+              div
+                | Subject:&nbsp;&nbsp;
+                = @task.subject
+              div
+                | Subject Area:&nbsp;&nbsp;
+                = @task.subject_area.name if @task.subject_area.present?
+              div.location
+                = "Tutoring Location: #{@task.location}"
+          div.col-sm-4.col-sm-offset-1
+            p About the student:
+            div.row
+              div.col-sm-6
+                div#user-photo
+                  - if @task.user.photo.present?
+                    = image_tag @task.user.photo
+                  - else
+                    = render 'users/blank_photo.svg'
+              div.col-sm-6
+                div#user-info
+                  h4 = @task.user.name
+                  p
+                    | From:&nbsp;
+                    = @task.user.school.name if @task.user.school.present?
+  div.editing
+    - if @task.user == current_user
+      = link_to edit_task_path(@task) do
+        button.btn.cus-blue-btn Edit
+      span &nbsp;
+      = link_to @task, method: :delete, data: { confirm: 'Are you sure?' } do
+        button.btn.btn-danger Delete
+  div.apply
+    - if @task.user != current_user
+        button.btn.cus-blue-btn.btn-lg Apply to Tutor
+

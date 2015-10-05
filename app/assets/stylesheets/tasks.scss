@@ -20,3 +20,61 @@
     }
   }
 }
+
+
+#tasks-show-page {
+  .panel {
+    .panel-heading {
+      #left-info {
+        width: 150px;
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+
+        #budget {
+          border-left: solid 1px gray;
+        }
+      }
+
+      #right-info {
+        #status {
+          display: inline-block;
+          background-color: white;
+          padding: 10px 20px;
+          border-radius: 4px;
+          font-size: 19px;
+          float: right;
+          color: green;
+        }
+      }
+    }
+    .panel-body {
+      #additional-info {
+        font-size: 13px;
+      }
+      .divider {
+        width: 200px;
+        border-top: solid 1px gray;
+        margin: 20px 0 15px;
+      }
+      #user-photo {
+        img, svg {
+          padding: 2px;
+          border-radius: 3px;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
+          border: 1px solid #C7C7C7;
+          width: 100%;
+          max-width: 100px;
+        }
+        svg {
+          fill: #C7C7C7;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .editing {
+    float: right;
+  }
+}

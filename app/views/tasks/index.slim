@@ -30,7 +30,7 @@ div.container
               div.subject
                 = task.subject
               div.school
-                = task.user.school.name
+                = task.user.school.name if task.user.school.present?
             td
               = "$#{task.lower_price} - $#{task.upper_price}"
             td = task.status
