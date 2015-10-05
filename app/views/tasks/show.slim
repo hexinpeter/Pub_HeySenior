@@ -37,19 +37,16 @@ div.container
                 = "Tutoring Location: #{@task.location}"
           div.col-sm-4.col-sm-offset-1
             p About the student:
-            div.row
-              div.col-sm-6
-                div#user-photo
-                  - if @task.user.photo.present?
-                    = image_tag @task.user.photo
-                  - else
-                    = render 'users/blank_photo.svg'
-              div.col-sm-6
-                div#user-info
-                  h4 = @task.user.name
-                  p
-                    | From:&nbsp;
-                    = @task.user.school.name if @task.user.school.present?
+            div#user-photo
+              - if @task.user.photo.present?
+                = image_tag @task.user.photo
+              - else
+                = render 'users/blank_photo.svg'
+            div#user-info
+              h4 = @task.user.name
+              p
+                | From:&nbsp;
+                = @task.user.school.name if @task.user.school.present?
   div.editing
     - if @task.user == current_user
       = link_to edit_task_path(@task) do
