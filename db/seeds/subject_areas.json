@@ -1,0 +1,16 @@
+{
+  "areas":[
+    {"name": "Business & Economics"},
+    {"name": "Engineering"},
+    {"name": "IT"},
+    {"name": "Science"},
+    {"name": "Architecture & Building"},
+    {"name": "Agriculture & Environment"},
+    {"name": "Health, Medicine & Dentistry"},
+    {"name": "Education"},
+    {"name": "Law"},
+    {"name": "Arts"},
+    {"name": "Creative"},
+    {"name": "Other"}
+  ]
+}

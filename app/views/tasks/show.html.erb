@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @task.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Upper price:</strong>
+  <%= @task.upper_price %>
+</p>
+
+<p>
+  <strong>Lower price:</strong>
+  <%= @task.lower_price %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @task.location %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<p>
+  <strong>Subject area:</strong>
+  <%= @task.subject_area %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

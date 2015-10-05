@@ -1,0 +1,8 @@
+div.container
+  h1 Editing Task
+
+  = render 'form'
+
+  = link_to 'Show', @task
+  span &nbsp;|&nbsp;
+  = link_to 'Back', tasks_path

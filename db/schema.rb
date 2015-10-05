@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003050854) do
+ActiveRecord::Schema.define(version: 20151005033853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,27 @@ ActiveRecord::Schema.define(version: 20151003050854) do
     t.string "name"
   end
 
+  create_table "subject_areas", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "subject"
+    t.text     "description"
+    t.decimal  "upper_price"
+    t.decimal  "lower_price"
+    t.string   "location"
+    t.text     "title"
+    t.string   "status"
+    t.integer  "subject_area_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "tasks", ["subject_area_id"], name: "index_tasks_on_subject_area_id", using: :btree
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -69,4 +90,6 @@ ActiveRecord::Schema.define(version: 20151003050854) do
 
   add_foreign_key "profiles", "schools"
   add_foreign_key "profiles", "users"
+  add_foreign_key "tasks", "subject_areas"
+  add_foreign_key "tasks", "users"
 end

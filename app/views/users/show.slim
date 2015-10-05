@@ -43,4 +43,29 @@ div.container
     = link_to edit_user_path do
         button.btn.btn-lg.cus-blue-btn#edit-profile.no-style-link Edit Profile
 
-    div.student-info
+    div.created-tasks
+      - @user.tasks.each do |task|
+        p
+          = task.title
+          = link_to "show", task
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
