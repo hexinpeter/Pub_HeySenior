@@ -1,0 +1,43 @@
+div.applications
+  div.table-responsive#biddings-table
+    table.table
+      colgroup
+          col style="width:20%"
+          col style="width:50%"
+          col style="width:20%"
+          col style="width:10%"
+      thead
+        tr
+          th Senior Biddings
+          th
+          th Hourly Charge
+          - case @current_user_identity
+            - when 'requester', 'bidder'
+              th
+      tbody
+        - @task.bids.each do |bid|
+          - next if !bid.persisted?
+          tr
+            td
+              div.user-photo.small-photo-size
+                - if bid.user.photo.present?
+                  = image_tag bid.user.photo
+                - else
+                  = render 'users/blank_photo.svg'
+              div#bidder-name = bid.user.name
+              div = bid.user.school.name if bid.user.school.present?
+            td
+              = bid.description
+            td
+              = bid.price
+
+            - case @current_user_identity
+              - when 'requester'
+                td.action-buttons
+                  div.btn.cus-blue-btn#bidding-accept-button Accept
+              - when 'bidder'
+                - if bid.user == current_user
+                  td.action-buttons
+                    div.btn.btn-default#bidding-edit-button Edit
+                    = link_to bid, method: :delete, data: { confirm: 'Are you sure?' } do
+                      div.btn.btn-danger#bidding-delete-button Delete

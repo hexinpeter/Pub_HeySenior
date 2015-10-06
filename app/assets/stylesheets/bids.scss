@@ -1,0 +1,14 @@
+// Place all the styles related to the Bids controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#bid-form form {
+  #bid_description {
+    max-width: 500px;
+  }
+  #bid-price-group {
+    .input-group {
+      max-width: 180px;
+    }
+  }
+}

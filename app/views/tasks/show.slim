@@ -1,69 +1,33 @@
 div.container
   h2.task-title = @task.title
 
-  div.panel.panel-default
-    div.panel-heading
-      div.row
-        div.col-xs-6
-          div#left-info
-            div.row
-              div.col-xs-4
-                div#bids
-                  div Bids
-                  div#bids-num 4
-              div.col-xs-8#budget
-                  div Budget
-                  div#budget-num
-                    = "$#{@task.lower_price} - $#{@task.upper_price}"
-        div.col-xs-6
-          div#right-info
-            div#status
-              = @task.status
-    div.panel-body
-      Panel
-        div.row
-          div.col-sm-7
-            h4 Request Description
-            p = @task.description
-            div.divider
-            div#additional-info
-              div
-                span.info-label Subject:&nbsp;&nbsp;
-                = @task.subject
-              div
-                span.info-label Subject Area:&nbsp;&nbsp;
-                = @task.subject_area.name if @task.subject_area.present?
-              div.location
-                span.info-label Tutoring Location:&nbsp;&nbsp;
-                = @task.location
-              div#documents
-                - if @task.documents.any?
-                  div#heading Attached Documents:
-                  - @task.documents.each do |doc|
-                    = link_to doc.url, target: '_blank' do
-                      span.glyphicon.glyphicon-file
-                      = doc.path.match(/[^\/]+$/)
-                    br
-          div.col-sm-4.col-sm-offset-1
-            p About the student:
-            div#user-photo
-              - if @task.user.photo.present?
-                = image_tag @task.user.photo
-              - else
-                = render 'users/blank_photo.svg'
-            div#user-info
-              h4 = @task.user.name
-              p
-                | From:&nbsp;
-                = @task.user.school.name if @task.user.school.present?
-  div.editing
-    - if @task.user == current_user
-      = link_to edit_task_path(@task) do
-        button.btn.cus-blue-btn Edit
-      span &nbsp;
-      = link_to @task, method: :delete, data: { confirm: 'Are you sure?' } do
-        button.btn.btn-danger Delete
-  div.apply
-    - if @task.user != current_user
-        button.btn.cus-blue-btn.btn-lg Apply to Tutor
+  = render 'tasks/task_section'
 
+
+  - case @current_user_identity
+    - when 'requester'
+      div.editing
+        - if @task.user == current_user
+          = link_to edit_task_path(@task) do
+            button.btn.cus-blue-btn Edit
+          span &nbsp;
+          = link_to @task, method: :delete, data: { confirm: 'Are you sure?' } do
+            button.btn.btn-danger Delete
+    - when 'bidder', 'potential_bidder'
+      div.bidding
+        - if !@bid.persisted?
+          button.btn.cus-blue-btn.btn-lg#bidding-button Bid for This
+        div#bidding-form
+          = render 'bids/form'
+    - when 'stranger'
+      div.bidding
+        = link_to new_user_registration_path do
+          button.btn.cus-blue-btn.btn-lg Bid for This
+
+
+  = render 'tasks/bidding_section'
+
+
+javascript:
+  var action = "#{@bidding_form_action.present? ? @bidding_form_action : 'hide'}"
+  biddingForm(action)

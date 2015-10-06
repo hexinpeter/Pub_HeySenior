@@ -1,0 +1,20 @@
+div#bid-form
+  = simple_form_for(@bid) do |f|
+    = f.error_notification
+
+    div.form-inputs
+      = f.association :task, as: :hidden
+      div#bid-price-group.form-group
+        label class="decimal optional control-label" for="bid_price" Hourly Charge
+        div.input-group
+          div.input-group-addon $
+          = f.input_field :price, class: 'form-control'
+          div.input-group-addon AUD
+        = f.full_error :price, class: 'simple-form-error'
+      = f.input :description, input_html: { rows: "5"}
+
+    div.form-actions
+      = f.button :submit
+      div.btn.btn-default#cancel-button Cancel
+
+

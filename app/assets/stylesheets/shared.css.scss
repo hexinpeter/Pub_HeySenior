@@ -10,6 +10,16 @@
   }
 }
 
+.cus-pink-btn {
+  background-color: $cus-pink;
+  color: white;
+  border: none;
+  &:hover, &:focus, &:active {
+    background-color: $hover-pink;
+    color: white;
+  }
+}
+
 .cus-success-btn {
   background-color: #6AC56A;
   color: white;
@@ -20,6 +30,37 @@
   }
 }
 
+.user-photo {
+  img, svg {
+    padding: 2px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
+    border: 1px solid #C7C7C7;
+    width: 100%;
+  }
+  svg {
+    fill: #C7C7C7;
+    padding: 10px;
+  }
+}
+
+.large-photo-size {
+  img, svg {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+.small-photo-size {
+  img, svg {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+.simple-form-error {
+  color: #a94442;
+}
 
 .no-style-link a, a.no-style-link {
   color: white;

@@ -24,8 +24,14 @@ div#task-form
       = f.input :location, label: "Tutoring Location", required: false
       / = f.input :status
       = f.file_field :documents, multiple: true
+      div#file-upload-hint
+        | Press&nbsp;
+        span ctrl
+        | &nbsp;(Windows) or&nbsp;
+        span command
+        | &nbsp;(Mac) during selection to select multiple files.
 
     div.form-actions
-      = f.button :submit, class: "cus-success-btn"
+      = f.button :submit, class: "cus-success-btn", id: "submit-btn"
 
 

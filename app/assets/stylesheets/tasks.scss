@@ -1,6 +1,6 @@
-// Place all the styles related to the Tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//************************* BROWSE TASK PAGE *******************//
+
 #tasks-index-page, #tasks-search-page {
   .header {
     text-align: center;
@@ -30,6 +30,9 @@
   }
 }
 
+
+//************************* TASK FORM *******************//
+
 #task-form form {
   #task_subject_area_id, #task_subject {
     width: 200px;
@@ -51,14 +54,29 @@
   #task_location {
     max-width: 300px;
   }
+  #submit-btn {
+    margin: 20px 0 10px;
+  }
+  #file-upload-hint {
+    font-size: 10px;
+    color: gray;
+    span {
+      display: inline-block;
+      background-color: rgb(238, 238, 238);
+      padding: 2px;
+    }
+  }
 }
 
 
-#tasks-show-page {
+
+//*********************** TASK SHOW PAGE ***************************//
+
+#tasks-show-page, #bids-create-page, #bids-update-page {
   .panel {
     .panel-heading {
       #left-info {
-        width: 150px;
+        width: 180px;
         background-color: white;
         padding: 5px 10px;
         border-radius: 4px;
@@ -93,21 +111,9 @@
         border-top: solid 1px gray;
         margin: 20px 0 15px;
       }
-      #user-photo {
+      #student-photo {
         float: left;
         margin-right: 20px;
-        img, svg {
-          padding: 2px;
-          border-radius: 3px;
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
-          border: 1px solid #C7C7C7;
-          width: 100%;
-          max-width: 100px;
-        }
-        svg {
-          fill: #C7C7C7;
-          padding: 10px;
-        }
       }
       #documents {
         margin-top: 10px;
@@ -119,6 +125,42 @@
   }
 
   .editing {
-    float: right;
+    text-align: right;
   }
+
+  .bidding {
+    #bidding-form {
+      max-width: 600px;
+      padding: 20px;
+      border: solid 1px rgba(128, 128, 128, 0.46);
+      border-radius: 8px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+      #cancel-button {
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .applications {
+    margin: 40px 0 20px;
+    #biddings-table {
+      #bidding-delete-button {
+        margin-top: 5px;
+      }
+      #bidder-name {
+        font-weight: bold;
+      }
+      .action-buttons {
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+//*********************** TASK EDIT PAGE ***************************//
+
+#tasks-edit-page {
+  padding-bottom: 35px;
 }

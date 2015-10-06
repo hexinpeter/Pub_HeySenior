@@ -3,6 +3,5 @@ div.container
 
   = render 'form'
 
-  = link_to 'Show', @task
-  span &nbsp;|&nbsp;
-  = link_to 'Back', tasks_path
+  = link_to @task do
+    div.btn.btn-default Cancel

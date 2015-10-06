@@ -3,7 +3,7 @@ div.container
     div.basic-info
       div.row
         div.col-sm-3.col-sm-offset-1
-          div#user-photo
+          div.user-photo.large-photo-size
             - if @user.photo.present?
               = image_tag @user.photo.url
             - else

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
   has_many :tasks
+  has_many :bids
 
   validates :name, :role, presence: true
 

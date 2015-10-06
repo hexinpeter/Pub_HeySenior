@@ -12,6 +12,17 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    if !user_signed_in?
+      @current_user_identity = 'stranger'
+    elsif @task.user == current_user
+      @current_user_identity = 'requester'
+    elsif @task.bid_already?(current_user)
+      @current_user_identity = 'bidder'
+      @bid = @task.bids.find_by_user_id(current_user.id)
+    else
+      @current_user_identity = 'potential_bidder'
+      @bid = @task.bids.new
+    end
   end
 
   # GET /tasks/new
