@@ -3,6 +3,12 @@ div.container
 
   h1.header Consultation Requests
 
+  = form_tag(search_tasks_path, {:method => 'get', class: 'form-inline', id: 'task-search-form'}) do
+      div.form-group
+        label for='subject_area' Subject Area &nbsp;
+        = select_tag :subject_area, options_from_collection_for_select(SubjectArea.all, "name", "name"), include_blank: true, class: 'form-control'
+      = submit_tag('Search', :name => nil, class: 'btn cus-blue-btn', id: 'search-button')
+
   div.table-responsive#task-table
     table.table.table-hover
       colgroup

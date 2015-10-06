@@ -43,11 +43,39 @@ div.container
     = link_to edit_user_path do
         button.btn.btn-lg.cus-blue-btn#edit-profile.no-style-link Edit Profile
 
-    div.created-tasks
-      - @user.tasks.each do |task|
-        p
-          = task.title
-          = link_to "show", task
+
+    h2 Your Consultation Requests
+    div.table-responsive#task-table
+      table.table.table-hover
+        colgroup
+            col style="width:60%"
+            col style="width:15%"
+            col style="width:15%"
+        thead
+          tr
+            th Consultation Requests
+            th Subject
+            th Suggested price
+            th Status
+
+        tbody
+          - @user.tasks.each do |task|
+            tr
+              td
+                div.title.h4
+                  = link_to task.title, task
+                div.description
+                  = task.description
+                div.location
+                  = "Tutoring Location: #{task.location}"
+              td
+                div.subject
+                  = task.subject
+                div.school
+                  = task.user.school.name if task.user.school.present?
+              td
+                = "$#{task.lower_price} - $#{task.upper_price}"
+              td = task.status
 
 
 

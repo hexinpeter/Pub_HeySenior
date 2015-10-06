@@ -41,4 +41,17 @@
     margin-top: 20px;
     margin-left: 30%;
   }
+
+  #task-table {
+    tr {
+      cursor: pointer;
+    }
+    td .location {
+      margin-top: 5px;
+      display: inline-block;
+      background-color: rgb(231, 231, 231);
+      padding: 3px 6px;
+      font-size: 12px;
+    }
+  }
 }

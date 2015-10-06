@@ -23,6 +23,15 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def search
+    @tasks = Task.all
+    if params[:subject_area].present?
+      subject_area = params[:subject_area]
+      @tasks = SubjectArea.find_by_name(subject_area).tasks
+    end
+    render :index
+  end
+
   # POST /tasks
   # POST /tasks.json
   def create

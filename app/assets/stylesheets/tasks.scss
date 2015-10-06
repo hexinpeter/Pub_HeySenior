@@ -1,7 +1,7 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#tasks-index-page {
+#tasks-index-page, #tasks-search-page {
   .header {
     text-align: center;
     margin: 50px 0;
@@ -17,6 +17,14 @@
       background-color: rgb(231, 231, 231);
       padding: 3px 6px;
       font-size: 12px;
+    }
+  }
+
+  #task-search-form {
+    margin-bottom: 37px;
+    margin-top: -20px;
+    #search-button {
+      margin-left: 5px;
     }
   }
 }

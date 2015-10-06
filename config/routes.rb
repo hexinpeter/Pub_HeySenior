@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :tasks
   devise_for :users
   root 'home#index'
 
   get 'home/index'
   get 'home/interest', as: 'interest'
+
+  resources :tasks do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :interests, only: [:create]
 
