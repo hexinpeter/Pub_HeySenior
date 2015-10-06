@@ -5,7 +5,7 @@ div.container
     - user_school_id = @user.school.present? ? @user.school.id : nil
     - user_city_id = @user.city.present? ? @user.city.id : nil
     = f.association :school
-    = f.association :city
+    = f.association :city, collection: City.order(:name)
     = f.input :phone,
               hint: 'Your number will only be revealed to the seniors whom you\'ve confirmed to meet.'
     = f.input :description, label: 'Introduction'
