@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  before_action :set_user
+  before_filter :authenticate_user!, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
+  end
+
+  def visit
+    if !User.find_by_id(params[:id])
+      redirect_to root_path, alert: 'User does not exist.'
+    end
+    @user = User.find_by_id(params[:id])
   end
 
   def edit
@@ -14,9 +21,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def dashboard
   end
 
   private

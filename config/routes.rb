@@ -17,9 +17,8 @@ Rails.application.routes.draw do
   # used by Devise for sign-in redirect
   get '/profile' => "users#show", as: :user_root
 
-  resource :users, path: '/profile', only: [:edit, :update, :show], as: 'user' do
-    get :dashboard
-  end
+  resource :users, path: '/profile', only: [:edit, :update, :show], as: 'user'
+  get '/profile/:id', to: 'users#visit', as: 'visit_user'
 
   resources :bids, only: [:create, :update, :destroy]
 

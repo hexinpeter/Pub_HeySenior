@@ -49,7 +49,8 @@ div.panel.panel-default
             - else
               = render 'users/blank_photo.svg'
           div#user-info
-            h4 = @task.user.name
+            = link_to visit_user_path(@task.user) do
+              h4 = @task.user.name
             p
               | From:&nbsp;
               = @task.user.school.name if @task.user.school.present?

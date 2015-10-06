@@ -15,6 +15,7 @@ div.container
                 div.info-label City:
                 div = @user.city.present? ? @user.city.name : "&nbsp;".html_safe
               div.col-sm-4
+                / - if user_signed_in? &&
                 div.info-label Contancts:
                 div = @user.email
                 div = @user.phone
@@ -29,6 +30,7 @@ div.container
               = image_tag @user.photo.url
             - else
               = render 'users/blank_photo.svg'
+            / = image_tag asset_path('profile.jpg')
             br
             div#change-photo
               = simple_form_for(@user.profile,
@@ -40,42 +42,6 @@ div.container
                   = f.button :submit, 'Update', class: 'btn btn-xs'
 
 
-    = link_to edit_user_path do
-        button.btn.cus-blue-btn#edit-profile-btn.no-style-link Edit Profile
-
-
-    / h2 Your Consultation Requests
-    / div.table-responsive#task-table
-    /   table.table.table-hover
-    /     colgroup
-    /         col style="width:60%"
-    /         col style="width:15%"
-    /         col style="width:15%"
-    /     thead
-    /       tr
-    /         th Consultation Requests
-    /         th Subject
-    /         th Suggested price
-    /         th Status
-
-    /     tbody
-    /       - @user.tasks.each do |task|
-    /         tr
-    /           td
-    /             div.title.h4
-    /               = link_to task.title, task
-    /             div.description
-    /               = task.description
-    /             div.location
-    /               = "Tutoring Location: #{task.location}"
-    /           td
-    /             div.subject
-    /               = task.subject
-    /             div.school
-    /               = task.user.school.name if task.user.school.present?
-    /           td
-    /             = "$#{task.lower_price} - $#{task.upper_price}"
-    /           td = task.status
 
 
 

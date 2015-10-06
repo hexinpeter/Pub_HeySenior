@@ -1,28 +1,37 @@
-#users-show-page, #users-update-page {
+#users-show-page, #users-update-page, #users-visit-page {
   // height: 100%;
   // background-color: gray;
   #profile-page-body {
     margin: 50px 5%;
   }
+  .user-photo {
+    img, svg {
+      max-width: 300px;
+      max-height: 300px;
+    }
+    #change-photo {
+      // text-align: center;
+    }
+  }
+
   #user-info-panel {
     #user-name {
       margin-bottom: 20px;
+      border-bottom: solid 1px rgb(168, 168, 168);
+      h1 {
+        margin-top: 0;
+      }
     }
-    #user-detail-field {
+    #non-bio-info {
+      margin-bottom: 15px;
+    }
+    .info-label {
+      font-weight: 600;
       font-size: 16px;
-      p {
-        margin: 0;
-      }
-      span#label {
-        float: left;
-        font-weight: 600;
-        width: 100px;
-      }
     }
   }
-  #edit-profile {
+  #edit-profile-btn {
     margin-top: 20px;
-    margin-left: 30%;
   }
 
   #task-table {

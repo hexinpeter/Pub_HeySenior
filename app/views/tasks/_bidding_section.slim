@@ -24,7 +24,7 @@ div.applications
                   = image_tag bid.user.photo
                 - else
                   = render 'users/blank_photo.svg'
-              div#bidder-name = bid.user.name
+              div#bidder-name = link_to bid.user.name, visit_user_path(bid.user)
               div = bid.user.school.name if bid.user.school.present?
             td
               = bid.description
