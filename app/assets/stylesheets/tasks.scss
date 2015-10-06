@@ -83,6 +83,10 @@
     .panel-body {
       #additional-info {
         font-size: 13px;
+        span.info-label {
+          width: 111px;
+          display: inline-block;
+        }
       }
       .divider {
         width: 200px;
@@ -103,6 +107,12 @@
         svg {
           fill: #C7C7C7;
           padding: 10px;
+        }
+      }
+      #documents {
+        margin-top: 10px;
+        #heading {
+          font-weight: 600;
         }
       }
     }

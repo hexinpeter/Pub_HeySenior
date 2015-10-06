@@ -28,13 +28,22 @@ div.container
             div.divider
             div#additional-info
               div
-                | Subject:&nbsp;&nbsp;
+                span.info-label Subject:&nbsp;&nbsp;
                 = @task.subject
               div
-                | Subject Area:&nbsp;&nbsp;
+                span.info-label Subject Area:&nbsp;&nbsp;
                 = @task.subject_area.name if @task.subject_area.present?
               div.location
-                = "Tutoring Location: #{@task.location}"
+                span.info-label Tutoring Location:&nbsp;&nbsp;
+                = @task.location
+              div#documents
+                - if @task.documents.any?
+                  div#heading Attached Documents:
+                  - @task.documents.each do |doc|
+                    = link_to doc.url, target: '_blank' do
+                      span.glyphicon.glyphicon-file
+                      = doc.path.match(/[^\/]+$/)
+                    br
           div.col-sm-4.col-sm-offset-1
             p About the student:
             div#user-photo

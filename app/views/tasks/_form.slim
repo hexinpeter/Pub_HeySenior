@@ -23,6 +23,7 @@ div#task-form
           = f.input_field :upper_price, class: 'form-control'
       = f.input :location, label: "Tutoring Location", required: false
       / = f.input :status
+      = f.file_field :documents, multiple: true
 
     div.form-actions
       = f.button :submit, class: "cus-success-btn"

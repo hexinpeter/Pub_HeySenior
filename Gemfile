@@ -39,7 +39,7 @@ gem 'country_select'
 
 # File Upload
 # gem "paperclip", "~> 4.3"
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-aws'
 
 # Use ActiveModel has_secure_password

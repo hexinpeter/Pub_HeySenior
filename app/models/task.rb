@@ -6,6 +6,8 @@ class Task < ActiveRecord::Base
 
   validates :user, :subject_area, :subject, :upper_price, :lower_price, :location, :title, presence: true
 
+  mount_uploaders :documents, FileUploader
+
   def default_values
     self.status ||= 'open'
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005033853) do
+ActiveRecord::Schema.define(version: 20151006005644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20151005033853) do
     t.integer  "subject_area_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.json     "documents"
   end
 
   add_index "tasks", ["subject_area_id"], name: "index_tasks_on_subject_area_id", using: :btree

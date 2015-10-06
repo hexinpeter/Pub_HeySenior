@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 1e4e7b0bf20fee70d8ac3815d0921144f39e14cf
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,11 +64,6 @@ GEM
       sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     carrierwave-aws (1.0.0)
       aws-sdk (~> 2.0)
       carrierwave (~> 0.7)
@@ -241,7 +246,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   byebug
-  carrierwave
+  carrierwave!
   carrierwave-aws
   coffee-rails (~> 4.1.0)
   country_select
