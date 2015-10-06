@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   resources :interests, only: [:create]
 
+  # used by Devise for sign-in redirect
+  get '/profile' => "users#show", as: :user_root
+
   resource :users, path: '/profile', only: [:edit, :update, :show], as: 'user' do
     get :dashboard
   end
