@@ -3,26 +3,26 @@ div.container
 
   = render 'tasks/task_section'
 
-
-  - case @current_user_identity
-    - when 'requester'
-      div.editing
-        - if @task.user == current_user
-          = link_to edit_task_path(@task) do
-            button.btn.cus-blue-btn Edit
-          span &nbsp;
-          = link_to @task, method: :delete, data: { confirm: 'Are you sure?' } do
-            button.btn.btn-danger Delete
-    - when 'bidder', 'potential_bidder'
-      div.bidding
-        - if !@bid.persisted?
-          button.btn.cus-blue-btn.btn-lg#bidding-button Bid for This
-        div#bidding-form
-          = render 'bids/form'
-    - when 'stranger'
-      div.bidding
-        = link_to new_user_registration_path do
-          button.btn.cus-blue-btn.btn-lg Bid for This
+  - if @task.open?
+    - case @current_user_identity
+      - when 'requester'
+        div.editing
+          - if @task.user == current_user
+            = link_to edit_task_path(@task) do
+              button.btn.cus-blue-btn Edit
+            span &nbsp;
+            = link_to close_task_path(@task), data: { confirm: 'Are you sure?' } do
+              button.btn.btn-danger Close
+      - when 'bidder', 'potential_bidder'
+        div.bidding
+          - if !@bid.persisted?
+            button.btn.cus-blue-btn.btn-lg#bidding-button Bid for This
+          div#bidding-form
+            = render 'bids/form'
+      - when 'stranger'
+        div.bidding
+          = link_to new_user_registration_path do
+            button.btn.cus-blue-btn.btn-lg Bid for This
 
 
   = render 'tasks/bidding_section'
@@ -31,3 +31,6 @@ div.container
 javascript:
   var action = "#{@bidding_form_action.present? ? @bidding_form_action : 'hide'}"
   biddingForm(action)
+  if ("#{@task.closed?}" == 'true') {
+    grayOutPage();
+  }

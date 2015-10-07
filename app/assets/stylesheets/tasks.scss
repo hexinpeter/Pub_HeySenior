@@ -154,10 +154,45 @@
       .action-buttons {
         text-align: right;
       }
+      #accepted-bid {
+        position: absolute;
+        background-color: rgb(8, 132, 8);
+        color: white;
+        padding: 2px 14px;
+      }
     }
   }
 }
 
+.gray-out-page {
+  color: gray !important;
+  div {
+    color: gray !important;
+    #status {
+      color: gray !important;
+    }
+  }
+  a {
+    color: gray !important;
+  }
+  img {
+      filter: grayscale(100%); /* Current draft standard */
+      -webkit-filter: grayscale(100%); /* New WebKit */
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%); /* Not yet supported in Gecko, Opera or IE */
+      filter: url(resources.svg#desaturate); /* Gecko */
+      filter: gray; /* IE */
+      -webkit-filter: grayscale(1); /* Old WebKit */
+  }
+  svg {
+    fill: gray !important;
+  }
+}
+
+.gray-out-tr {
+
+}
 
 //*********************** TASK EDIT PAGE ***************************//
 

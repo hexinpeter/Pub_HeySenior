@@ -39,7 +39,8 @@ div.container
                 = task.user.school.name if task.user.school.present?
             td
               = "$#{task.lower_price} - $#{task.upper_price}"
-            td = task.status
+            td class="#{task.status}-status"
+              div = task.status.capitalize
 
 
   / = link_to 'New Task', new_task_path

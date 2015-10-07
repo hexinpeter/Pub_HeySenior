@@ -11,14 +11,17 @@ div.applications
           th Senior Biddings
           th
           th Hourly Charge
-          - case @current_user_identity
-            - when 'requester', 'bidder'
-              th
+          - if @task.open?
+            - case @current_user_identity
+              - when 'requester', 'bidder'
+                th
       tbody
         - @task.bids.each do |bid|
           - next if !bid.persisted?
           tr
             td
+              - if bid.accepted?
+                div#accepted-bid Accepted
               div.user-photo.small-photo-size
                 - if bid.user.photo.present?
                   = image_tag bid.user.photo
@@ -30,14 +33,15 @@ div.applications
               = bid.description
             td
               = bid.price
-
-            - case @current_user_identity
-              - when 'requester'
-                td.action-buttons
-                  div.btn.cus-blue-btn#bidding-accept-button Accept
-              - when 'bidder'
-                - if bid.user == current_user
+            - if @task.open?
+              - case @current_user_identity
+                - when 'requester'
                   td.action-buttons
-                    div.btn.btn-default#bidding-edit-button Edit
-                    = link_to bid, method: :delete, data: { confirm: 'Are you sure?' } do
-                      div.btn.btn-danger#bidding-delete-button Delete
+                    = link_to accept_bid_task_path(@task, bid), data: { confirm: 'Are you sure?' } do
+                      div.btn.cus-blue-btn#bidding-accept-button Accept
+                - when 'bidder'
+                  - if bid.user == current_user
+                    td.action-buttons
+                      div.btn.btn-default#bidding-edit-button Edit
+                      = link_to bid, method: :delete, data: { confirm: 'Are you sure?' } do
+                        div.btn.btn-danger#bidding-delete-button Delete

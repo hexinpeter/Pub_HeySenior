@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :check_permission, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :accept_bid, :close]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :accept_bid, :close]
+  before_action :check_permission, only: [:edit, :update, :destroy, :accept_bid, :close]
 
   # GET /tasks
   # GET /tasks.json
@@ -32,15 +32,6 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
-  end
-
-  def search
-    @tasks = Task.all
-    if params[:subject_area].present?
-      subject_area = params[:subject_area]
-      @tasks = SubjectArea.find_by_name(subject_area).tasks
-    end
-    render :index
   end
 
   # POST /tasks
@@ -84,6 +75,33 @@ class TasksController < ApplicationController
     end
   end
 
+
+  def close
+    @task.close
+    @task.bids.each { |bid| bid.close }
+    redirect_to @task, notice: 'Closed successfully.'
+  end
+
+  def search
+    @tasks = Task.all
+    if params[:subject_area].present?
+      subject_area = params[:subject_area]
+      @tasks = SubjectArea.find_by_name(subject_area).tasks
+    end
+    render :index
+  end
+
+  def accept_bid
+    @bid = Bid.find_by_id(params[:bid_id])
+    if !@bid or @bid.task != @task
+      redirect_to root, alert: 'Permission denied.'
+    end
+
+    @bid.accept
+    @task.accept
+    redirect_to visit_user_path(@bid.user), notice: 'Accepted successfully, contact your senior to meet!'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -93,6 +111,8 @@ class TasksController < ApplicationController
     def check_permission
       if @task.user != current_user
         redirect_to tasks_path, alert: 'Permission denied.'
+      elsif @task.accepted?
+        redirect_to @task, alert: 'Permission denied. This task has already been accepted.'
       end
     end
 

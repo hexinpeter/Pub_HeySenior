@@ -15,10 +15,10 @@ div.container
                 div.info-label City:
                 div = @user.city.present? ? @user.city.name : "&nbsp;".html_safe
               div.col-sm-4
-                / - if user_signed_in? &&
-                div.info-label Contancts:
-                div = @user.email
-                div = @user.phone
+                - if user_signed_in? && @user.connected_users.include?(current_user)
+                  div.info-label Contacts:
+                  div = @user.email
+                  div = @user.phone
 
             div#bio
               div.info-label Bio

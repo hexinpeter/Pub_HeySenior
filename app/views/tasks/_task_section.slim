@@ -7,7 +7,7 @@ div.panel.panel-default
             div.col-xs-4
               div#bids
                 div Bids
-                div#bids-num 4
+                div#bids-num = @task.bids.count
             div.col-xs-8#budget
                 div Budget (hourly)
                 div#budget-num
@@ -15,7 +15,7 @@ div.panel.panel-default
       div.col-xs-6
         div#right-info
           div#status
-            = @task.status
+            = @task.status.capitalize
   div.panel-body
     Panel
       div.row

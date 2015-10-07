@@ -43,7 +43,7 @@ class BidsController < ApplicationController
     end
 
     def check_permission
-      if @bid.user != current_user
+      if @bid.user != current_user or !@bid.task.open?
         redirect_to tasks_path, alert: 'Permission denied.'
       end
     end

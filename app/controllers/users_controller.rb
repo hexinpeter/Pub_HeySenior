@@ -9,7 +9,12 @@ class UsersController < ApplicationController
     if !User.find_by_id(params[:id])
       redirect_to root_path, alert: 'User does not exist.'
     end
+
     @user = User.find_by_id(params[:id])
+
+    if @user == current_user
+      render :show
+    end
   end
 
   def edit

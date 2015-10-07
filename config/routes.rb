@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'accept/:bid_id', to: 'tasks#accept_bid', as: 'accept_bid'
+      get :close
+    end
   end
 
   resources :interests, only: [:create]
