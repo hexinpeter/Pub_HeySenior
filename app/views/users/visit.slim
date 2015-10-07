@@ -30,16 +30,6 @@ div.container
               = image_tag @user.photo.url
             - else
               = render 'users/blank_photo.svg'
-            / = image_tag asset_path('profile.jpg')
-            br
-            div#change-photo
-              = simple_form_for(@user.profile,
-                                url: user_path,
-                                html: { method: :put, multipart: true, class: 'form-inline' }) do |f|
-                div.form-group
-                  = f.file_field :photo
-                  = f.hidden_field :photo_cache
-                  = f.button :submit, 'Update', class: 'btn btn-xs'
 
 
 
