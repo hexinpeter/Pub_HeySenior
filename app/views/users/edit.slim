@@ -8,7 +8,7 @@ div.container
     = f.association :city, collection: City.order(:name)
     = f.input :phone,
               hint: 'Your number will only be revealed to the seniors whom you\'ve confirmed to meet.'
-    = f.input :description, label: 'Introduction'
-    = f.button :submit
-  = link_to user_path do
-      button.btn.cus-blue-btn.no-style-link Cancel
+    = f.input :description, label: 'Introduction', input_html: {rows: '5'}
+    = f.button :submit, class: 'cus-blue-btn'
+    = link_to user_path do
+        button.btn.btn-default.no-style-link#cancel-btn Cancel

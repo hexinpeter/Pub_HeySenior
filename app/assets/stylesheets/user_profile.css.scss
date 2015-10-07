@@ -4,7 +4,8 @@
   #profile-page-body {
     margin: 50px 5%;
   }
-  .user-photo {
+
+  .basic-info .user-photo {
     img, svg {
       max-width: 300px;
       max-height: 300px;
@@ -49,6 +50,17 @@
 
   .heading {
     margin: 50px 0 20px;
+  }
+
+
+  #your-seniors {
+    .senior {
+      display: inline-block;
+      margin-right: 40px;
+      #name {
+        font-weight: 600;
+      }
+    }
   }
 
 }

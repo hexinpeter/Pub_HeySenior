@@ -43,67 +43,97 @@ div.container
     = link_to edit_user_path do
         button.btn.cus-blue-btn#edit-profile-btn.no-style-link Edit Profile
 
-    h3.heading Your Seniors
+    - if @user.seniors.any?
+      div#your-seniors
+        h3.heading Your Seniors
+        div.divider
+        - @user.seniors.each do |senior|
+          div.senior
+            div.user-photo.small-photo-size
+              - if senior.photo.present?
+                = image_tag senior.photo.url
+              - else
+                = render 'users/blank_photo.svg'
+            div#name = link_to senior.name, visit_user_path(senior)
+            div = senior.email
+            div = senior.phone
 
-    h3.heading Your Consultation Requests
-    div.table-responsive#task-table
-      table.table.table-hover
-        colgroup
-            col style="width:40%"
-            col style="width:20%"
-            col style="width:10%"
-            col style="width:15%"
-        thead
-          tr
-            th Consultation Requests
-            th Subject
-            th Bids
-            th Status
+    - if @user.students.any?
+      div#your-seniors
+        h3.heading Your Students
+        div.divider
+        - @user.students.each do |student|
+          div.senior
+            div.user-photo.small-photo-size
+              - if student.photo.present?
+                = image_tag student.photo.url
+              - else
+                = render 'users/blank_photo.svg'
+            div#name = link_to student.name, visit_user_path(student)
+            div = student.email
+            div = student.phone
 
-        tbody
-          - @user.tasks.each do |task|
+    - if @user.tasks.any?
+      h3.heading Your Consultation Requests
+      div.divider
+      div.table-responsive#task-table
+        table.table.table-hover
+          colgroup
+              col style="width:40%"
+              col style="width:20%"
+              col style="width:10%"
+              col style="width:15%"
+          thead
             tr
-              td
-                div.title.h4
-                  = link_to task.title, task
-              td
-                div.subject
-                  = task.subject
-                div.school
-                  = task.user.school.name if task.user.school.present?
-              td
-                = task.bids.count
-              td = task.status
+              th Consultation Requests
+              th Subject
+              th Bids
+              th Status
 
-    h3.heading Your Bidding Requests
-    div.table-responsive#task-table
-      table.table.table-hover
-        colgroup
-            col style="width:40%"
-            col style="width:20%"
-            col style="width:10%"
-            col style="width:15%"
-        thead
-          tr
-            th Consultation Requests
-            th Subject
-            th Bids
-            th Status
+          tbody
+            - @user.tasks.each do |task|
+              tr
+                td
+                  div.title.h4
+                    = link_to task.title, task
+                td
+                  div.subject
+                    = task.subject
+                  div.school
+                    = task.user.school.name if task.user.school.present?
+                td
+                  = task.bids.count
+                td = task.status
 
-        tbody
-          - @user.bids.map{|bid| bid.task}.each do |task|
+    - if @user.bids.any?
+      h3.heading Your Applications
+      div.divider
+      div.table-responsive#task-table
+        table.table.table-hover
+          colgroup
+              col style="width:20%"
+              col style="width:40%"
+              col style="width:10%"
+              col style="width:15%"
+          thead
             tr
-              td
-                div.title.h4
-                  = link_to task.title, task
-              td
-                div.subject
-                  = task.subject
-                div.school
-                  = task.user.school.name if task.user.school.present?
-              td
-                = task.bids.count
-              td = task.status
+              th Consultation Request
+              th Your Application
+              th Price
+              th Status
+
+          tbody
+            - @user.bids.each do |bid|
+              tr
+                td
+                  div.title
+                    = link_to bid.task.title, bid.task
+                td
+                  div.subject
+                    = bid.description
+                td
+                  = bid.price
+                td = bid.status
 
 
 

@@ -1,3 +1,13 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// ****************** USER EDIT PAGE *************************//
+#users-edit-page, #users-update-page {
+  padding: 30px 0;
+  #profile_school_id, #profile_city_id, #profile_phone {
+    max-width: 200px;
+  }
+  #profile_description {
+    max-width: 500px;
+  }
+  #cancel-btn {
+    margin-left: 20px;
+  }
+}

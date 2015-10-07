@@ -16,13 +16,13 @@ div.container
       - when 'bidder', 'potential_bidder'
         div.bidding
           - if !@bid.persisted?
-            button.btn.cus-blue-btn.btn-lg#bidding-button Bid for This
+            button.btn.cus-blue-btn.btn-lg#bidding-button Apply
           div#bidding-form
             = render 'bids/form'
       - when 'stranger'
         div.bidding
           = link_to new_user_registration_path do
-            button.btn.cus-blue-btn.btn-lg Bid for This
+            button.btn.cus-blue-btn.btn-lg Apply
 
 
   = render 'tasks/bidding_section'
