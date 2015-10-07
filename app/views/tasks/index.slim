@@ -42,6 +42,8 @@ div.container
             td class="#{task.status}-status"
               div = task.status.capitalize
 
+    = paginate @tasks
+
 
   / = link_to 'New Task', new_task_path
 

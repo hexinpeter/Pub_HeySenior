@@ -33,6 +33,9 @@ gem 'bootstrap-sass', '~> 3.3.5'
 # User authentication
 gem 'devise'
 
+# Pagination
+gem 'kaminari'
+
 # Simple form
 gem 'simple_form'
 gem 'country_select'
