@@ -42,6 +42,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
+        TaskMailer.create_email(@task).deliver_now
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -99,6 +100,9 @@ class TasksController < ApplicationController
 
     @bid.accept
     @task.accept
+    TaskMailer.accept_email(@task).deliver_now
+    TaskMailer.bid_accepted_email(@bid).deliver_now
+
     redirect_to visit_user_path(@bid.user), notice: 'Accepted successfully, contact your senior to meet!'
   end
 

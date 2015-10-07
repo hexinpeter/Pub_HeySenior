@@ -1,0 +1,16 @@
+Hi <%= @task.user.name %>,
+
+You have a new application for your consultation request titled "<%= @task.title %>".
+
+Applicant Name: <%= @bid.user.name %>
+Applicant Message:
+    <%= @bid.description %>
+Hourly Charge: $<%= @bid.price %>
+
+You can view and accept the application at <%= task_url(@task) %> after logging in.
+The applicant's profile is also availabel at <%= visit_user_url(@bid.user) %>
+
+--
+Best Regards,
+HeySenior Support
+

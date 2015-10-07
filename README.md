@@ -14,4 +14,7 @@
 
 
 ## IMPORTANT
+* Sidekiq to push email sending to background jobs
+* Better email notifications to bidder, rejection notice
+* HTML email templates
 

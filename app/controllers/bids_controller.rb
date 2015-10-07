@@ -9,6 +9,7 @@ class BidsController < ApplicationController
     @bid.user = current_user
 
     if @bid.save
+      TaskMailer.new_application_email(@bid).deliver_now
       redirect_to @bid.task, notice: 'Bid was successfully created.'
     else
       @task = @bid.task

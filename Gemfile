@@ -41,9 +41,11 @@ gem 'simple_form'
 gem 'country_select'
 
 # File Upload
-# gem "paperclip", "~> 4.3"
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave-aws'
+
+# Mailgun
+gem 'mailgun_rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
