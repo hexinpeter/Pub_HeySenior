@@ -10,6 +10,7 @@ class Task < ActiveRecord::Base
                      allow_blank: true
 
   mount_uploaders :documents, FileUploader
+  default_scope { order(status: :desc, created_at: :desc) }
 
   def default_values
     self.status ||= 'open'

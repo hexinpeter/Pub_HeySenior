@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.order('created_at DESC').page(params[:page]).per(10)
+    @tasks = Task.page(params[:page]).per(10)
   end
 
   # GET /tasks/1
@@ -84,10 +84,10 @@ class TasksController < ApplicationController
   end
 
   def search
-    @tasks = Task.order('created_at DESC').page(params[:page]).per(10)
+    @tasks = Task.page(params[:page]).per(10)
     if params[:subject_area].present?
       subject_area = params[:subject_area]
-      @tasks = SubjectArea.find_by_name(subject_area).tasks.order('created_at DESC').page(params[:page]).per(10)
+      @tasks = SubjectArea.find_by_name(subject_area).tasks.page(params[:page]).per(10)
     end
     render :index
   end
