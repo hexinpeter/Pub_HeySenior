@@ -84,10 +84,10 @@ class TasksController < ApplicationController
   end
 
   def search
-    @tasks = Task.all
+    @tasks = Task.order('created_at DESC').page(params[:page]).per(10)
     if params[:subject_area].present?
       subject_area = params[:subject_area]
-      @tasks = SubjectArea.find_by_name(subject_area).tasks
+      @tasks = SubjectArea.find_by_name(subject_area).tasks.order('created_at DESC').page(params[:page]).per(10)
     end
     render :index
   end
