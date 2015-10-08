@@ -12,7 +12,8 @@ div.container
     = f.button :submit, 'Sign In', class: 'btn-lg cus-success-btn submit-btn'
 
     div#forgot-password-field
-      = link_to "Forgot password?", new_password_path(resource_name)
+      div = link_to "Forgot password?", new_password_path(resource_name)
+      div = link_to "Sign Up", new_user_registration_path
 
-  / # = render "devise/shared/links"
+  / = render "devise/shared/links"
 
