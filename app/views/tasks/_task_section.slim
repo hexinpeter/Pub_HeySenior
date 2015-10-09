@@ -42,15 +42,16 @@ div.panel.panel-default
                     = doc.path.match(/[^\/]+$/)
                   br
         div.col-sm-4.col-sm-offset-1
-          p About the student:
-          div.user-photo.small-photo-size#student-photo
-            - if @task.user.photo.present?
-              = image_tag @task.user.photo
-            - else
-              = render 'users/blank_photo.svg'
-          div#user-info
-            = link_to visit_user_path(@task.user) do
-              h4 = @task.user.name
-            p
-              | From:&nbsp;
-              = @task.user.school.name if @task.user.school.present?
+          div#about-the-student
+            p About the student:
+            div.user-photo.small-photo-size#student-photo
+              - if @task.user.photo.present?
+                = image_tag @task.user.photo
+              - else
+                = render 'users/blank_photo.svg'
+            div#user-info
+              = link_to visit_user_path(@task.user) do
+                h4 = @task.user.name
+              p
+                | From:&nbsp;
+                = @task.user.school.name if @task.user.school.present?

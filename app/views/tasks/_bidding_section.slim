@@ -5,7 +5,10 @@ div.applications
           col style="width:20%"
           col style="width:50%"
           col style="width:20%"
-          col style="width:10%"
+          - if @task.open?
+            - case @current_user_identity
+              - when 'requester', 'bidder'
+                col style="width:10%"
       thead
         tr
           th Senior Biddings
@@ -32,7 +35,7 @@ div.applications
             td
               = bid.description
             td
-              = bid.price
+              = "$#{bid.price}"
             - if @task.open?
               - case @current_user_identity
                 - when 'requester'
@@ -45,3 +48,41 @@ div.applications
                       div.btn.btn-default#bidding-edit-button Edit
                       = link_to bid, method: :delete, data: { confirm: 'Are you sure?' } do
                         div.btn.btn-danger#bidding-delete-button Delete
+
+
+div#responsive-applications-list
+  ul.list-group
+    - @task.bids.each do |bid|
+      - next if !bid.persisted?
+      li.list-group-item
+        div = bid.description
+        div#price
+          | Hourly Charge:&nbsp;&nbsp;$
+          = bid.price
+        div.row
+          div.col-xs-6
+            div#applicant-info
+              div.user-photo.small-photo-size
+                - if bid.user.photo.present?
+                  = image_tag bid.user.photo
+                - else
+                  = render 'users/blank_photo.svg'
+              div#user-info
+                = link_to visit_user_path(bid.user) do
+                  div#bidder-name = bid.user.name
+          div.col-xs-6
+            div#action-buttons
+              - if @task.open?
+                - case @current_user_identity
+                  - when 'requester'
+                    td.action-buttons
+                      = link_to accept_bid_task_path(@task, bid), data: { confirm: 'Are you sure?' } do
+                        div.btn.cus-blue-btn#bidding-accept-button Accept
+                  - when 'bidder'
+                    - if bid.user == current_user
+                      td.action-buttons
+                        div.btn.btn-default#bidding-edit-button Edit
+                        div
+                          = link_to bid, method: :delete, data: { confirm: 'Are you sure?' } do
+                            div.btn.btn-danger#bidding-delete-button Delete
+

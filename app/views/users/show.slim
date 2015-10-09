@@ -103,7 +103,25 @@ div.container
                     = task.user.school.name if task.user.school.present?
                 td
                   = task.bids.count
-                td = task.status
+                td
+                  div class="#{task.status}-status status"
+                    = task.status.capitalize
+      div#responsive-task-listing
+        ul.list-group
+          - @user.tasks.each do |task|
+            li.list-group-item
+              div.h4 = link_to task.title, task
+              div
+                span.info-label Subject:&nbsp;&nbsp;
+                = task.subject
+              div.row
+                div.col-xs-6
+                  div.location
+                    span.info-label Bids:&nbsp;&nbsp;
+                    = task.bids.count
+                div.col-xs-6.status-info
+                  div class="#{task.status}-status status"
+                    = task.status.capitalize
 
     - if @user.bids.any?
       h3.heading Your Applications
@@ -132,8 +150,24 @@ div.container
                   div.subject
                     = bid.description
                 td
-                  = bid.price
-                td = bid.status
+                  = "$#{bid.price}"
+                td = bid.status.capitalize
+      div#responsive-task-listing
+        ul.list-group
+          - @user.bids.each do |bid|
+            li.list-group-item
+              div = link_to bid.task.title, bid.task
+              div
+                span.info-label Your application:&nbsp;&nbsp;
+                = bid.description
+              div.row
+                div.col-xs-6
+                  div
+                    span.info-label Charge:&nbsp;&nbsp;$
+                    = bid.price
+                div.col-xs-6.status-info
+                  div class="#{bid.status}-status status"
+                    = bid.status.capitalize
 
 
 

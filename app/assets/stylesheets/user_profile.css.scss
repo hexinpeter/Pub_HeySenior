@@ -9,6 +9,7 @@
     img, svg {
       max-width: 300px;
       max-height: 300px;
+      width: 100%;
     }
     #change-photo {
       // text-align: center;
@@ -63,4 +64,35 @@
     }
   }
 
+  #responsive-task-listing {
+    .status-info {
+      text-align: right;
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  #users-show-page, #users-update-page, #users-visit-page {
+    #responsive-task-listing {
+      display: block;
+    }
+    #task-table {
+      display: none;
+    }
+    .user-photo {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  #users-show-page, #users-update-page, #users-visit-page {
+    #responsive-task-listing {
+      display: none;
+    }
+    #task-table {
+      display: block;
+    }
+  }
 }

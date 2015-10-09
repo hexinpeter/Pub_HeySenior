@@ -9,6 +9,22 @@ div.container
         = select_tag :subject_area, options_from_collection_for_select(SubjectArea.all, "name", "name"), include_blank: true, class: 'form-control'
       = submit_tag('Search', :name => nil, class: 'btn cus-blue-btn', id: 'search-button')
 
+  div#responsive-task-listing
+    ul.list-group
+      - @tasks.each do |task|
+        li.list-group-item
+          div.h4 = link_to task.title, task
+          div
+            span.info-label Subject:&nbsp;&nbsp;
+            = task.subject
+          div.location
+            span.info-label Price:&nbsp;&nbsp;
+            = "$#{task.lower_price} - $#{task.upper_price}"
+          div class="#{task.status}-status status"
+            = task.status.capitalize
+          div.location
+            = task.location
+
   div.table-responsive#task-table
     table.table.table-hover
       colgroup
@@ -39,8 +55,11 @@ div.container
                 = task.user.school.name if task.user.school.present?
             td
               = "$#{task.lower_price} - $#{task.upper_price}"
-            td class="#{task.status}-status"
-              div = task.status.capitalize
+            td
+              div class="#{task.status}-status status" = task.status.capitalize
+
+
+
 
     = paginate @tasks
 

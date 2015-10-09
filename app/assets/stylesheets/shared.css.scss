@@ -30,6 +30,23 @@
   }
 }
 
+.open-status {
+  background-color: #40C640;
+  display: inline-block;
+  color: white;
+}
+
+.closed-status, .accepted-status {
+  background-color: #C3CBC3;
+  display: inline-block;
+  color: white;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
 .user-photo {
   img, svg {
     padding: 2px;
