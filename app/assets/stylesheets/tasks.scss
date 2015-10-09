@@ -161,13 +161,14 @@
       .action-buttons {
         text-align: right;
       }
-      #accepted-bid {
-        position: absolute;
-        background-color: rgb(8, 132, 8);
-        color: white;
-        padding: 2px 14px;
-      }
     }
+  }
+
+  #accepted-bid {
+    position: absolute;
+    background-color: rgb(8, 132, 8);
+    color: white;
+    padding: 2px 14px;
   }
 
   #responsive-applications-list {

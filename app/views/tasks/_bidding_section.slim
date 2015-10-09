@@ -62,6 +62,8 @@ div#responsive-applications-list
         div.row
           div.col-xs-6
             div#applicant-info
+              - if bid.accepted?
+                div#accepted-bid Accepted
               div.user-photo.small-photo-size
                 - if bid.user.photo.present?
                   = image_tag bid.user.photo
