@@ -1,0 +1,88 @@
+@media (max-width: 768px) {
+  #home-interest-page {
+    h1, .h1 {
+      font-size: 28px;
+    }
+    h3, .h3 {
+      font-size: 18px;
+    }
+  }
+
+  .responsive-lg-btn {
+    padding: 8px 14px;
+    font-size: 16px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+  }
+
+  #users-show-page, #users-update-page, #users-visit-page {
+    #responsive-task-listing {
+      display: block;
+    }
+    #task-table {
+      display: none;
+    }
+    .user-photo {
+      margin-top: 20px;
+    }
+  }
+
+  .cus-nav-nav {
+    margin: 7.5px -15px 0px;
+  }
+
+  #home-index-page #headline .cus-btn {
+    font-size: 1.2em;
+  }
+
+  #tasks-index-page, #tasks-search-page {
+    #responsive-task-listing {
+      display: block;
+    }
+    #task-table {
+      display: none;
+    }
+  }
+
+  #tasks-show-page, #bids-create-page, #bids-update-page {
+    #about-the-student {
+      margin-top: 20px;
+    }
+    .applications {
+      display: none;
+    }
+    #responsive-applications-list {
+      display: block;
+    }
+  }
+}
+
+
+@media (min-width: 769px) {
+  #users-show-page, #users-update-page, #users-visit-page {
+    #responsive-task-listing {
+      display: none;
+    }
+    #task-table {
+      display: block;
+    }
+  }
+
+  #tasks-index-page, #tasks-search-page {
+    #responsive-task-listing {
+      display: none;
+    }
+    #task-table {
+      display: block;
+    }
+  }
+
+  #tasks-show-page, #bids-create-page, #bids-update-page {
+    .applications {
+      display: block;
+    }
+    #responsive-applications-list {
+      display: none;
+    }
+  }
+}

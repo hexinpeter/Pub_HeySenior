@@ -10,6 +10,8 @@
 @import "tasks";
 @import "bids";
 @import "users";
+@import "responsive_media";
+
 
 body {
   font-family: "Myriad Set Pro", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -68,10 +70,4 @@ footer {
 .nav-btn-wrapper {
   padding-top: 8px !important;
   padding-bottom: 8px !important;
-}
-
-@media (max-width: 768px) {
-  .cus-nav-nav {
-    margin: 7.5px -15px 0px;
-  }
 }

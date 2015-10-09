@@ -37,28 +37,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  #tasks-index-page, #tasks-search-page {
-    #responsive-task-listing {
-      display: block;
-    }
-    #task-table {
-      display: none;
-    }
-  }
-}
-
-@media (min-width: 769px) {
-  #tasks-index-page, #tasks-search-page {
-    #responsive-task-listing {
-      display: none;
-    }
-    #task-table {
-      display: block;
-    }
-  }
-}
-
 //************************* TASK FORM *******************//
 
 #task-form form {
@@ -229,31 +207,6 @@
   }
   svg {
     fill: gray !important;
-  }
-}
-
-@media (max-width: 768px) {
-  #tasks-show-page, #bids-create-page, #bids-update-page {
-    #about-the-student {
-      margin-top: 20px;
-    }
-    .applications {
-      display: none;
-    }
-    #responsive-applications-list {
-      display: block;
-    }
-  }
-}
-
-@media (min-width: 769px) {
-  #tasks-show-page, #bids-create-page, #bids-update-page {
-    .applications {
-      display: block;
-    }
-    #responsive-applications-list {
-      display: none;
-    }
   }
 }
 

@@ -71,28 +71,3 @@
   }
 
 }
-
-@media (max-width: 768px) {
-  #users-show-page, #users-update-page, #users-visit-page {
-    #responsive-task-listing {
-      display: block;
-    }
-    #task-table {
-      display: none;
-    }
-    .user-photo {
-      margin-top: 20px;
-    }
-  }
-}
-
-@media (min-width: 769px) {
-  #users-show-page, #users-update-page, #users-visit-page {
-    #responsive-task-listing {
-      display: none;
-    }
-    #task-table {
-      display: block;
-    }
-  }
-}
