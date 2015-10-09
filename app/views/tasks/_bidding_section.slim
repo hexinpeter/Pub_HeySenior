@@ -35,7 +35,7 @@ div.applications
             td
               = bid.description
             td
-              = bid.price
+              = "$#{bid.price}"
             - if @task.open?
               - case @current_user_identity
                 - when 'requester'

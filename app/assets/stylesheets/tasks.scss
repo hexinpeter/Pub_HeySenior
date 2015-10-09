@@ -35,11 +35,6 @@
       float: right;
     }
   }
-
-  .status {
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -251,7 +246,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   #tasks-show-page, #bids-create-page, #bids-update-page {
     .applications {
       display: block;
