@@ -117,10 +117,11 @@
         border-top: solid 1px gray;
         margin: 20px 0 15px;
       }
-      #student-photo img {
-        float: left;
-        margin-right: 20px;
-        min-width: 100px;
+      #student-photo {
+        img, svg {
+          float: left;
+          margin-right: 20px;
+        }
       }
       #documents {
         margin-top: 10px;
