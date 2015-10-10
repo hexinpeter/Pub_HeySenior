@@ -1,0 +1,5 @@
+div class=(['user-photo', defined?(photo_size) ? "#{photo_size}-photo-size" : 'default-photo-size'].compact.join(' '))
+  - if user.photo.present?
+    = image_tag user.photo
+  - else
+    = render 'users/blank_photo.svg'

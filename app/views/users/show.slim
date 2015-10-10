@@ -24,20 +24,15 @@ div.container
               div = @user.description
 
         div.col-sm-4
-          div.user-photo
-            - if @user.photo.present?
-              = image_tag @user.photo.url
-            - else
-              = render 'users/blank_photo.svg'
-            br
-            div#change-photo
-              = simple_form_for(@user.profile,
-                                url: user_path,
-                                html: { method: :put, multipart: true, class: 'form-inline' }) do |f|
-                div.form-group
-                  = f.file_field :photo
-                  = f.hidden_field :photo_cache
-                  = f.button :submit, 'Update', class: 'btn btn-xs'
+          = render partial: 'users/user_photo', locals: {user: @user}
+          div#change-photo
+            = simple_form_for(@user.profile,
+                              url: user_path,
+                              html: { method: :put, multipart: true, class: 'form-inline' }) do |f|
+              div.form-group
+                = f.file_field :photo
+                = f.hidden_field :photo_cache
+                = f.button :submit, 'Update', class: 'btn btn-xs'
 
 
     = link_to edit_user_path do
@@ -49,11 +44,7 @@ div.container
         div.divider
         - @user.seniors.each do |senior|
           div.senior
-            div.user-photo.small-photo-size
-              - if senior.photo.present?
-                = image_tag senior.photo.url
-              - else
-                = render 'users/blank_photo.svg'
+            = render partial: 'users/user_photo', locals: {user: senior, photo_size: 'small'}
             div#name = link_to senior.name, visit_user_path(senior)
             div = senior.email
             div = senior.phone
@@ -64,11 +55,7 @@ div.container
         div.divider
         - @user.students.each do |student|
           div.senior
-            div.user-photo.small-photo-size
-              - if student.photo.present?
-                = image_tag student.photo.url
-              - else
-                = render 'users/blank_photo.svg'
+            = render partial: 'users/user_photo', locals: {user: student, photo_size: 'small'}
             div#name = link_to student.name, visit_user_path(student)
             div = student.email
             div = student.phone
