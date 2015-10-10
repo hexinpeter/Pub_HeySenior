@@ -138,7 +138,9 @@ div.container
                     = bid.description
                 td
                   = "$#{bid.price}"
-                td = bid.status.capitalize
+                td
+                  div class="#{bid.status}-status status"
+                    = bid.status.capitalize
       div#responsive-task-listing
         ul.list-group
           - @user.bids.each do |bid|
