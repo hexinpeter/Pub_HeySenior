@@ -25,12 +25,7 @@ div.container
               div = @user.description
 
         div.col-sm-4
-          div.user-photo
-            - if @user.photo.present?
-              = image_tag @user.photo.url
-            - else
-              = render 'users/blank_photo.svg'
-
+          = render partial: 'users/user_photo', locals: {user: @user}
 
 
 
