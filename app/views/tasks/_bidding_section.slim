@@ -25,11 +25,7 @@ div.applications
             td
               - if bid.accepted?
                 div#accepted-bid Accepted
-              div.user-photo.small-photo-size
-                - if bid.user.photo.present?
-                  = image_tag bid.user.photo
-                - else
-                  = render 'users/blank_photo.svg'
+              = render partial: 'users/user_photo', locals: {user: bid.user, photo_size: 'small'}
               div#bidder-name = link_to bid.user.name, visit_user_path(bid.user)
               div = bid.user.school.name if bid.user.school.present?
             td
@@ -62,11 +58,9 @@ div#responsive-applications-list
         div.row
           div.col-xs-6
             div#applicant-info
-              div.user-photo.small-photo-size
-                - if bid.user.photo.present?
-                  = image_tag bid.user.photo
-                - else
-                  = render 'users/blank_photo.svg'
+              - if bid.accepted?
+                div#accepted-bid Accepted
+              = render partial: 'users/user_photo', locals: {user: bid.user, photo_size: 'small'}
               div#user-info
                 = link_to visit_user_path(bid.user) do
                   div#bidder-name = bid.user.name

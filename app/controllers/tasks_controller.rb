@@ -98,6 +98,7 @@ class TasksController < ApplicationController
       redirect_to root, alert: 'Permission denied.'
     end
 
+    @task.bids.each { |bid| bid.close }
     @bid.accept
     @task.accept
     TaskMailer.accept_email(@task).deliver_now
