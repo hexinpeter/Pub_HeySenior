@@ -27,8 +27,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "figaro"
 
 gem 'slim'
-gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.5'
+
+# uses puma server instead of webrick
+# will be ignored by Cloud66 which uses Passenger by default
+gem 'puma'
 
 # User authentication
 gem 'devise'
@@ -46,6 +49,10 @@ gem 'carrierwave-aws'
 
 # Mailgun
 gem 'mailgun_rails'
+
+# Background process management
+gem 'sidekiq'
+gem 'sinatra', :require => nil
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
