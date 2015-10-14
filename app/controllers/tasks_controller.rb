@@ -42,7 +42,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        TaskMailer.create_email(@task).deliver_now
+        TaskMailer.create_email(@task).deliver_later
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -101,8 +101,8 @@ class TasksController < ApplicationController
     @task.bids.each { |bid| bid.close }
     @bid.accept
     @task.accept
-    TaskMailer.accept_email(@task).deliver_now
-    TaskMailer.bid_accepted_email(@bid).deliver_now
+    TaskMailer.accept_email(@task).deliver_later
+    TaskMailer.bid_accepted_email(@bid).deliver_later
 
     redirect_to visit_user_path(@bid.user), notice: 'Accepted successfully, contact your senior to meet!'
   end

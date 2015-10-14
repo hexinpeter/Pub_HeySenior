@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     seniors | students
   end
 
+  def admin?
+    email == 'hexinpeter@gmail.com'
+  end
+
   private
     def create_credentials
       create_profile if profile.blank?
