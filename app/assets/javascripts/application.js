@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require google_analytics
 //= require inspectlet
+//= require jquery.validate.min
 //= require bootstrap-sprockets
 //= require_tree .

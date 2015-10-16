@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     if @user == current_user
       render :show
     end
+
+    if user_signed_in?
+      @message = Message.new
+      @message.sender = current_user
+      @message.recipient = @user
+    end
   end
 
   def edit

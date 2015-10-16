@@ -41,7 +41,7 @@ div.applications
                 - when 'bidder'
                   - if bid.user == current_user
                     td.action-buttons
-                      div.btn.btn-default#bidding-edit-button Edit
+                      div.btn.btn-default#bidding-edit-button.toggle-button-persist Edit
                       = link_to bid, method: :delete, data: { confirm: 'Are you sure?' } do
                         div.btn.btn-danger#bidding-delete-button Delete
 

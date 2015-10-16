@@ -1,0 +1,22 @@
+$(document).ready(function() {
+
+  $('.toggle-button, .toggle-button-persist').click(function() {
+    toggleButtonForm();
+  });
+
+});
+
+function showToggleForm() {
+  $('.toggle-form').show();
+  $('.toggle-button').hide();
+}
+
+function hideToggleForm() {
+  $('.toggle-form').hide();
+  $('.toggle-button').show();
+}
+
+function toggleButtonForm() {
+  $('.toggle-form').toggle();
+  $('.toggle-button').toggle();
+}
