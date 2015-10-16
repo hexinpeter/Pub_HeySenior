@@ -1,0 +1,7 @@
+Hi <%= @message.recipient.name %>,
+
+You have a new message received from <%= @message.sender.name %>:
+
+"<%= @message.content %>"
+
+Reply to <%= @message.sender.name %> by visiting <%= visit_user_url(@message.sender) %>
