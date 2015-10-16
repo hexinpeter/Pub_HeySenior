@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    email == 'hexinpeter@gmail.com'
+    Figaro.env.admin_users.split(',').include? email
   end
 
   private
