@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :tasks
   has_many :bids
+  has_many :messages, class_name: "Message", foreign_key: "recipient_id"
+  has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
 
   validates :name, :role, presence: true
 
