@@ -27,13 +27,16 @@ div.container
         div.col-sm-4
           = render partial: 'users/user_photo', locals: {user: @user}
 
+    div.send-message
+      - if @message
+        div#message-form.toggle-form
+          = render 'messages/form'
+        button.btn.cus-blue-btn.btn-lg.toggle-button Send Message
 
 
-
-
-
-
-
+javascript:
+  $("#message-form form").validate();
+  hideToggleForm();
 
 
 

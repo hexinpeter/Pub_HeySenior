@@ -1,14 +1,6 @@
 $(document).ready(function() {
   taskTableClickable();
-
-  $('.bidding #bidding-button, #bidding-edit-button').click(function() {
-    toggleBiddingForm();
-  });
-  $('.bidding #bidding-form #cancel-button').click(function() {
-    toggleBiddingForm();
-  });
 });
-
 
 function taskTableClickable() {
   $('#task-table tr').click( function() {
@@ -16,29 +8,6 @@ function taskTableClickable() {
   }).hover( function() {
       $(this).toggleClass('hover');
   });
-}
-
-function biddingForm(action) {
-  if (action == 'show') {
-    showBiddingForm();
-  } else if (action == 'hide') {
-    hideBiddingForm();
-  };
-}
-
-function showBiddingForm() {
-  $('.bidding #bidding-form').show();
-  $('.bidding #bidding-button').hide();
-}
-
-function hideBiddingForm() {
-  $('.bidding #bidding-form').hide();
-  $('.bidding #bidding-button').show();
-}
-
-function toggleBiddingForm() {
-  $('.bidding #bidding-form').toggle();
-  $('.bidding #bidding-button').toggle();
 }
 
 function grayOutPage() {

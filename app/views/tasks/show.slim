@@ -16,8 +16,8 @@ div.container
       - when 'bidder', 'potential_bidder'
         div.bidding
           - if !@bid.persisted?
-            button.btn.cus-blue-btn.btn-lg#bidding-button Apply
-          div#bidding-form
+            button.btn.cus-blue-btn.btn-lg#bidding-button.toggle-button Apply
+          div#bidding-form.toggle-form
             = render 'bids/form'
       - when 'stranger'
         div.bidding
@@ -29,8 +29,11 @@ div.container
 
 
 javascript:
-  var action = "#{@bidding_form_action.present? ? @bidding_form_action : 'hide'}"
-  biddingForm(action)
+  if ("#{@bidding_form_action}" == 'show') {
+    showToggleForm();
+  } else {
+    hideToggleForm();
+  }
   if ("#{@task.closed?}" == 'true') {
     grayOutPage();
   }
