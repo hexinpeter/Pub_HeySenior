@@ -14,4 +14,4 @@ This is a personal projects that I'm running. The website online is served for i
 ## License
 ** READ ONLY LICENSE **
 
-All forms of usage of the code under this repository are strictly prohibited. Please contact [support@heysenior.com](support@heysenior.com) should you have any questions.
+All forms of usage of the code under this repository are strictly prohibited. Please contact [peter@heysenior.com](mailto:peter@heysenior.com) should you have any questions.
