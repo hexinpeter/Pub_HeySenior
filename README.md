@@ -1,6 +1,6 @@
 # HeySenior
 
-Hi, this is a public repository for the website [HeySenior.com](www.heysenior.com).
+Hi, this is a public repository for the website [HeySenior.com](https://www.heysenior.com).
 
 It is served to demonstrate my coding ability for my interviews.
 
