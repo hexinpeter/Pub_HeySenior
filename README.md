@@ -1,20 +1,17 @@
-# UI Future Improvements
-* More distinctive 'accepted' and 'open' tasks
+# HeySenior
 
-## Fonts Choices
-* Open Sans
-* "Avenir", "Helvetica Neue", "Helvetica", sans-serif;
+Hi, this is a public repository for the website [HeySenior.com](www.heysenior.com).
 
+It is served to demonstrate my coding ability for my interviews.
 
-# Known Issues
+This is a personal projects that I'm running. The website online is served for idea validation. It was launched on 13th Oct 2015. On the date of writing (23rd Oct), within 10 days, with only a few posts in Facebook and word of mouth, it has successfully attracted **50 sign-ups** and **matched 3 pairs** of students and tutors.
 
-## Tighter Permission Control
-* A post creation request of an 'accepted' bid is currently allowed
-* An accepted task can still be bid via post request
+## Technology Used
+* Ruby on Rails, PostgreSQL, Bootstrap, jQuery, CSS
+* Ruby Gems: Sidekiq, Devise, Simple Form, Slim, Carrierwave, Mailgun API
+* AWS EC2, S3
 
+## License
+** READ ONLY LICENSE **
 
-## IMPORTANT
-* Sidekiq to push email sending to background jobs
-* Better email notifications to bidder, rejection notice
-* HTML email templates
-
+All forms of usage of the code under this repository are strictly prohibited. Please contact [support@heysenior.com](support@heysenior.com) should you have any questions.
